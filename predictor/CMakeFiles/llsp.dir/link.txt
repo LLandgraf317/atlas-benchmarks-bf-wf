@@ -1,0 +1,2 @@
+/usr/bin/ar qc libllsp.a  CMakeFiles/llsp.dir/llsp.c.o
+/usr/bin/ranlib libllsp.a

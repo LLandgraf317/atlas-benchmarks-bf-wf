@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -Wextra -fPIC   CMakeFiles/cpuhog.dir/cpuhog.c++.o  -o cpuhog -rdynamic 

@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lukas/Development/hannes/atlas-rt/runtime/tests/broken.c++
+iostream
+-
+chrono
+-
+string
+-
+atomic
+-
+runtime/dispatch.h
+/home/lukas/Development/hannes/atlas-rt/runtime/tests/runtime/dispatch.h
+
+runtime/dispatch.h
+chrono
+-
+functional
+-
+future
+-
+mutex
+-
+memory
+-
+typeindex
+-
+initializer_list
+-
+ctime
+-
+iostream
+-
+time.h
+-
+sched.h
+-
+

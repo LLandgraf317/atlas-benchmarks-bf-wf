@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -Wextra -fPIC   CMakeFiles/predictor_test.dir/testsuite.c++.o  -o predictor_test -rdynamic libpredictor.a libllsp.a 

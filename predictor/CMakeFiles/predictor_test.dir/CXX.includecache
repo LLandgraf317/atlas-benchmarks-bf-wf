@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lukas/Development/hannes/atlas-rt/predictor/predictor.h
+memory
+-
+chrono
+-
+
+/home/lukas/Development/hannes/atlas-rt/predictor/testsuite.c++
+fstream
+-
+vector
+-
+iostream
+-
+string
+-
+stdexcept
+-
+chrono
+-
+iomanip
+-
+stdio.h
+-
+predictor.h
+/home/lukas/Development/hannes/atlas-rt/predictor/predictor.h
+

@@ -1,0 +1,1 @@
+Put libatlas-runtime.so and libgcd-compat.so in /usr/local/lib. The libraries can be created by building atlas-rt by Hannes Weissbach until my motivation to create proper makefiles reaches higher levels.

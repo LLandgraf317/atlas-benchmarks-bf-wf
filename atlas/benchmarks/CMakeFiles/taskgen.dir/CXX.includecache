@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.c++
+algorithm
+-
+iomanip
+-
+iostream
+-
+random
+-
+stdexcept
+-
+vector
+-
+array
+-
+boost/math/common_factor_rt.hpp
+-
+taskgen.h
+/home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.h
+
+/home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.h
+chrono
+-
+iostream
+-
+utility
+-
+vector
+-
+

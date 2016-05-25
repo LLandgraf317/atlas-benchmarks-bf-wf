@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/lukas/Development/hannes/atlas-rt/predictor/llsp.c
+stdbool.h
+-
+stdlib.h
+-
+stdio.h
+-
+string.h
+-
+math.h
+-
+assert.h
+-
+sys/types.h
+-
+llsp.h
+/home/lukas/Development/hannes/atlas-rt/predictor/llsp.h
+
+/home/lukas/Development/hannes/atlas-rt/predictor/llsp.h
+stddef.h
+-
+

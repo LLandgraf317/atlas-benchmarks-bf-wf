@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -Wall -Wextra -fPIC  -shared -Wl,-soname,libtaskgen.so -o libtaskgen.so CMakeFiles/taskgen.dir/taskgen.c++.o -lgmp 

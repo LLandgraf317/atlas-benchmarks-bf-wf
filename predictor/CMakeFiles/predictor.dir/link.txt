@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpredictor.a  CMakeFiles/predictor.dir/predictor.c++.o
+/usr/bin/ranlib libpredictor.a

@@ -3,18 +3,26 @@
 #include <cmath>
 #include <cstdlib>
 #include <iostream>
-#include <pthread.h>
 
+#include <pthread.h>
+#include <sched.h>
+
+#include <functional>
+#include <chrono>
+#include <atomic>
+#include <thread>
+
+#include "../runtime/dispatch.h"
 #include "atlas/atlas.h"
 
-#define MATRIX_HL 200
+#define MATRIX_HL 150
 #define handle_error(msg) \
                do { perror(msg); exit(EXIT_FAILURE); } while (0)
 
 
 typedef boost::multi_array<double, 2> array_type;
-typedef array_type::index index;
-	
+typedef array_type::index index_arr;
+
 array_type multiply(array_type m1, array_type m2);
 
 int random_cust() {
@@ -32,114 +40,139 @@ struct thread_info {
 };
 
 void initialize(array_type* matrix) {
-	
-	for (index i = 0; i != MATRIX_HL; ++i) {
-		for (index j = 0; j != MATRIX_HL; ++j) {
+
+	for (index_arr i = 0; i != MATRIX_HL; ++i) {
+		for (index_arr j = 0; j != MATRIX_HL; ++j) {
 			(*matrix)[i][j] = random_cust();
 		}
 	}
 }
 
 void initializeZero(array_type* matrix) {
-	for (index i = 0; i != MATRIX_HL; ++i) {
-		for (index j = 0; j != MATRIX_HL; ++j) {
+	for (index_arr i = 0; i != MATRIX_HL; ++i) {
+		for (index_arr j = 0; j != MATRIX_HL; ++j) {
 			(*matrix)[i][j] = 0;
 		}
 	}
 }
 
-static void* thread_start(void *arg) {
-	struct thread_info *tinfo = (thread_info*) arg;
-	char *uargv, *p;
-	
-	std::cout << "Thread " << tinfo->thread_num << " started" << std::endl;	
-  	array_type A(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type B(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type C(boost::extents[MATRIX_HL][MATRIX_HL]);
-	
-	initialize(&A);
-	initialize(&B);
-	//initializeZero(&C);
+//class MyFunctor {
+//	public: 
+//		MyFunctor () : 
+//}
 
-	C = multiply(A,B);
-	
-	std::cout << "Thread " << tinfo->thread_num << " finished" << std::endl;
-
-	return NULL;
+void *do_anything(void*) {
+	while(1) {}
 }
 
-int 
-main () {
-  // Create a 3D array that is 3 x 4 x 2
-  	array_type A(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type B(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type C(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type D(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type E(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type F(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type G(boost::extents[MATRIX_HL][MATRIX_HL]);
-  	array_type H(boost::extents[MATRIX_HL][MATRIX_HL]);
+struct execsomething {
+	void loopdaloop() {
+		while(1) {}
+	}
+};
 
-	int s, threadNumber, optional;
-	int numberThreads = 4;
+struct matrixstruct {
+void thread_start() {
+	//struct thread_info *tinfo = (thread_info*) arg;
+	char *uargv, *p;
+		std::cout << "Thread started" << std::endl;
+	array_type A(boost::extents[MATRIX_HL][MATRIX_HL]);
+	array_type B(boost::extents[MATRIX_HL][MATRIX_HL]);
+	initialize(&A);
+	initialize(&B);
+	
+
+	auto C = multiply(A,B);
+	std::cout << "Thread finished" << std::endl;
+}
+};
+
+
+void matrix_parallel() {
+	using namespace std::chrono;
+	using namespace std::literals::chrono_literals;
+	int numberThreads = 8;
 	struct thread_info *threadInfo;
-	pthread_attr_t attribute;
-	int stackSize;
+	int numberCpus = 8;
+	int threadNumber;
+	int s;
 	void *res;
+	cpu_set_t *cpuset;
+	
+	std::cout << "Getting cpu_set_t" << std::endl;
+	cpuset = CPU_ALLOC(numberCpus);
+	std::cout << "Initializing dispatch_queue" << std::endl;
+	atlas::dispatch_queue queue("matrix", {0,1,2,3,4,5,6,7});
+	std::cout << "Dispatch queue initialized" << std::endl;
+	double metric = 1;
+	bool useQueues = true;
+	
+	if(!useQueues) {
+ 		//s = pthread_attr_init(&attribute);
 
-  	//std::default_random_engine generator;
-  	//std::uniform_int_distribution<int> distribution(0,10000);
-	//std::uniform_int_distribution<int> random_100(0,MATRIX_HL);
+		//Allocate memory for pthread_create arguments
+ 		threadInfo = (thread_info*) calloc(numberThreads, sizeof(struct thread_info));
+	
 
-  	
-	/*for(index i = 0; i != MATRIX_HL; ++i) 
-    		for(index j = 0; j != MATRIX_HL; ++j) {
-        		A[i][j] = random_cust();
-			B[i][j] = random_cust();
-			C[i][j] = random_cust();
-			D[i][j] = random_cust();
-			E[i][j] = 0;//distribution(generator);
-			F[i][j] = 0;//distribution(generator);
-			//G[i][j] = distribution(generator);
-			//H[i][j] = distribution(generator);
-		}
-	std::cout << "Initialized matrices" << std::endl;
-	*/
- 	s = pthread_attr_init(&attribute);
-
-	//Allocate memory for pthread_create arguments
- 	threadInfo = (thread_info*) calloc(numberThreads, sizeof(struct thread_info));
-	if (threadInfo == NULL) 
-		handle_error("calloc being an ***");
+		if (threadInfo == NULL)
+			handle_error("calloc not giving resources");
+	}	
 
 	for (threadNumber = 0; threadNumber < numberThreads; threadNumber++) {
+		if(useQueues) {
+			matrixstruct something;
+			std::cout << "Trying to put into queue..." << std::endl;
+			queue.dispatch_async_atlas(steady_clock::now(), &metric, 1,
+				std::bind(&matrixstruct::thread_start, &something));
+			
+		}
+		else {
+		
 			threadInfo[threadNumber].thread_num = threadNumber + 1;
 			threadInfo[threadNumber].argv_string = NULL;
 			
-			s = pthread_create(&threadInfo[threadNumber].thread_id, 
-			NULL,//&attribute, wurde hier nicht initialisiert, kÃnnte fertige Matrizen enthalten
-			&thread_start, 
-			&threadInfo[threadNumber]); 
+			/*s = pthread_create(&threadInfo[threadNumber].thread_id,
+				NULL,//&attribute, wurde hier nicht initialisiert, koennte fertige Matrizen enthalten
+				&thread_start,
+				&(threadInfo[threadNumber]));*/
+		}
+		
 	}
-
+	
+	if(!useQueues)
  	for (threadNumber = 0; threadNumber < numberThreads; threadNumber++) {
 		s = pthread_join(threadInfo[threadNumber].thread_id, &res);
 		free(res);
-	}	
+	}
+	std::cout << "End" << std::endl;
+}
+
+int
+main () {
 
 	
-
+	std::cout << "Entering matrix_parallel()" << std::endl;
+	std::thread event(matrix_parallel);
+	if(event.joinable())
+		event.join();
+	
+//	pthread_t dummy;
+//	pthread_create(&dummy,
+			//NULL,//&attribute, wurde hier nicht initialisiert, koennte fer    tige Matrizen enthalten
+                                //&do_anything,
+                               //NULL);
+	//while(1) {}
   	return 0;
 }
 
 array_type multiply(array_type m1, array_type m2) {
 	array_type erg(boost::extents[MATRIX_HL][MATRIX_HL]);
-	
-	for(index i = 0; i != MATRIX_HL; ++i) {
-		for(index j = 0; j != MATRIX_HL; ++j) {
+
+	for(index_arr i = 0; i != MATRIX_HL; ++i) {
+		for(index_arr j = 0; j != MATRIX_HL; ++j) {
 			erg[i][j] = 0;
-			for(index k = 0; k != MATRIX_HL; ++k)
-				erg[i][j] = m1[i][k] * m2[k][i] + erg[i][j];			
+			for(index_arr k = 0; k != MATRIX_HL; ++k)
+				erg[i][j] = m1[i][k] * m2[k][i] + erg[i][j];
 		}
 		std::cout << i << " line of matrix" << std::endl;
 	}

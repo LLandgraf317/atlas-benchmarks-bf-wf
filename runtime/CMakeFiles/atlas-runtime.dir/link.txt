@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -Wall -Wextra -fPIC  -shared -Wl,-soname,libatlas-runtime.so -o libatlas-runtime.so CMakeFiles/atlas-runtime.dir/dispatch.c++.o ../predictor/libpredictor.a ../predictor/libllsp.a 

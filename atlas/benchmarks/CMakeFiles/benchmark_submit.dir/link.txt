@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -Wextra -fPIC   CMakeFiles/benchmark_submit.dir/submit.c++.o  -o benchmark_submit -rdynamic -Wl,-Bstatic -lboost_program_options -lboost_math_tr1 ../../common/libcommon.a -Wl,-Bdynamic 
