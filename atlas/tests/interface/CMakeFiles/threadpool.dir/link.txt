@@ -1,0 +1,1 @@
+/usr/bin/clang++    -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC   CMakeFiles/threadpool.dir/threadpool.c++.o  -o threadpool -rdynamic ../../../common/libcommon.a -lboost_program_options -pthread 

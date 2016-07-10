@@ -60,15 +60,15 @@ include common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/common.c++.o: common/CMakeFiles/common.dir/flags.make
 common/CMakeFiles/common.dir/common.c++.o: common/common.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object common/CMakeFiles/common.dir/common.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/common.dir/common.c++.o -c /home/lukas/Development/hannes/atlas-rt/common/common.c++
+	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/common.dir/common.c++.o -c /home/lukas/Development/hannes/atlas-rt/common/common.c++
 
 common/CMakeFiles/common.dir/common.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/common.dir/common.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/common/common.c++ > CMakeFiles/common.dir/common.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/common/common.c++ > CMakeFiles/common.dir/common.c++.i
 
 common/CMakeFiles/common.dir/common.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/common.dir/common.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/common/common.c++ -o CMakeFiles/common.dir/common.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/common/common.c++ -o CMakeFiles/common.dir/common.c++.s
 
 common/CMakeFiles/common.dir/common.c++.o.requires:
 

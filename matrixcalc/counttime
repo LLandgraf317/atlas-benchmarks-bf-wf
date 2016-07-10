@@ -1,0 +1,525 @@
+29-06-2016 08-27-56
+Count: 1
+Thread of execution: 4829, with duration: 2350millisecounds
+Count: 2
+Thread of execution: 4840, with duration: 2349millisecounds
+Count: 3
+Thread of execution: 4851, with duration: 2350millisecounds
+Count: 4
+Thread of execution: 4864, with duration: 2350millisecounds
+Count: 5
+Thread of execution: 4872, with duration: 2350millisecounds
+Count: 6
+Count: 7
+Thread of execution: 4880, with duration: 3292millisecounds
+Count: 8
+Count: 9
+Count: 10
+Thread of execution: 4883, with duration: 5767millisecounds
+Thread of execution: 4881, with duration: 6331millisecounds
+Thread of execution: 4882, with duration: 7287millisecounds
+Thread of execution: 4880, with duration: 3577millisecounds
+Count: 11
+Count: 12
+Count: 13
+Count: 14
+Thread of execution: 4880, with duration: 2549millisecounds
+Thread of execution: 4881, with duration: 2551millisecounds
+Thread of execution: 4883, with duration: 2554millisecounds
+Thread of execution: 4882, with duration: 2554millisecounds
+Count: 15
+Count: 16
+Count: 17
+Count: 18
+Thread of execution: 4880, with duration: 2518millisecounds
+Thread of execution: 4882, with duration: 2529millisecounds
+Thread of execution: 4881, with duration: 2539millisecounds
+Thread of execution: 4883, with duration: 2538millisecounds
+Count: 19
+Count: 20
+Count: 21
+Thread of execution: 4883, with duration: 2467millisecounds
+Thread of execution: 4882, with duration: 2468millisecounds
+Thread of execution: 4881, with duration: 2468millisecounds
+29-06-2016 08-31-14
+Count: 1
+Thread of execution: 5160, with duration: 2353 ms
+Count: 2
+Thread of execution: 5166, with duration: 2348 ms
+Count: 3
+Thread of execution: 5178, with duration: 2353 ms
+Count: 4
+Thread of execution: 5185, with duration: 2349 ms
+Count: 5
+Thread of execution: 5195, with duration: 2349 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 5207, with duration: 2522 ms
+Thread of execution: 5208, with duration: 2529 ms
+Thread of execution: 5210, with duration: 2536 ms
+Thread of execution: 5209, with duration: 2538 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 5210, with duration: 2575 ms
+Count: 14
+Thread of execution: 5208, with duration: 4837 ms
+Thread of execution: 5209, with duration: 5512 ms
+Count: 15
+Count: 16
+Thread of execution: 5207, with duration: 6416 ms
+Count: 17
+Thread of execution: 5210, with duration: 2363 ms
+Count: 18
+Thread of execution: 5209, with duration: 2450 ms
+Thread of execution: 5208, with duration: 2453 ms
+Count: 19
+Count: 20
+Thread of execution: 5207, with duration: 2355 ms
+Count: 21
+Thread of execution: 5210, with duration: 2356 ms
+Thread of execution: 5209, with duration: 2441 ms
+Thread of execution: 5208, with duration: 2439 ms
+Thread of execution: 5207, with duration: 2353 ms
+29-06-2016 08-32-15
+Count: 1
+Thread of execution: 5284, with duration: 2349 ms
+Count: 2
+Thread of execution: 5290, with duration: 2349 ms
+Count: 3
+Thread of execution: 5301, with duration: 2350 ms
+Count: 4
+Thread of execution: 5312, with duration: 2349 ms
+Count: 5
+Thread of execution: 5325, with duration: 2348 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 5341, with duration: 2520 ms
+Thread of execution: 5344, with duration: 2527 ms
+Thread of execution: 5342, with duration: 2530 ms
+Thread of execution: 5343, with duration: 2529 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 5343, with duration: 2616 ms
+Thread of execution: 5341, with duration: 4448 ms
+Count: 14
+Count: 15
+Thread of execution: 5342, with duration: 5607 ms
+Count: 16
+Thread of execution: 5344, with duration: 7106 ms
+Count: 17
+Thread of execution: 5341, with duration: 2376 ms
+Count: 18
+Thread of execution: 5343, with duration: 2619 ms
+Count: 19
+Thread of execution: 5342, with duration: 2353 ms
+Count: 20
+Thread of execution: 5344, with duration: 2354 ms
+Count: 21
+Thread of execution: 5341, with duration: 2354 ms
+Thread of execution: 5343, with duration: 2354 ms
+Thread of execution: 5342, with duration: 2352 ms
+Thread of execution: 5344, with duration: 2350 ms
+29-06-2016 08-42-14
+Deadline for one matrix multiplication: 2700 ms
+Count: 1
+Thread of execution: 6370, with duration: 2350 ms
+Count: 2
+Thread of execution: 6376, with duration: 2350 ms
+Count: 3
+Thread of execution: 6394, with duration: 2351 ms
+Count: 4
+Thread of execution: 6406, with duration: 2354 ms
+Count: 5
+Thread of execution: 6420, with duration: 2349 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 6436, with duration: 2522 ms
+Thread of execution: 6439, with duration: 2533 ms
+Thread of execution: 6437, with duration: 2535 ms
+Thread of execution: 6438, with duration: 2536 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 6436, with duration: 5067 ms
+Count: 14
+Thread of execution: 6439, with duration: 6996 ms
+Thread of execution: 6437, with duration: 7010 ms
+Count: 15
+Count: 16
+Thread of execution: 6438, with duration: 7062 ms
+Count: 17
+Thread of execution: 6436, with duration: 2374 ms
+Count: 18
+Thread of execution: 6439, with duration: 2357 ms
+Thread of execution: 6437, with duration: 2357 ms
+Count: 19
+Count: 20
+Thread of execution: 6438, with duration: 2354 ms
+Count: 21
+Thread of execution: 6436, with duration: 2354 ms
+Thread of execution: 6439, with duration: 2354 ms
+Thread of execution: 6437, with duration: 2355 ms
+Thread of execution: 6438, with duration: 2353 ms
+29-06-2016 08-44-54
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 6589, with duration: 2349 ms
+Count: 2
+Thread of execution: 6594, with duration: 2349 ms
+Count: 3
+Thread of execution: 6603, with duration: 2348 ms
+Count: 4
+Thread of execution: 6612, with duration: 2349 ms
+Count: 5
+Thread of execution: 6623, with duration: 2350 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 6638, with duration: 2528 ms
+Thread of execution: 6639, with duration: 2533 ms
+Thread of execution: 6641, with duration: 2538 ms
+Thread of execution: 6640, with duration: 2543 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 6640, with duration: 2535 ms
+Count: 14
+Thread of execution: 6641, with duration: 2969 ms
+Count: 15
+Thread of execution: 6640, with duration: 3200 ms
+Count: 16
+Thread of execution: 6638, with duration: 6418 ms
+Count: 17
+Thread of execution: 6641, with duration: 3624 ms
+Count: 18
+Thread of execution: 6639, with duration: 7273 ms
+Count: 19
+Thread of execution: 6640, with duration: 2358 ms
+Thread of execution: 6638, with duration: 2363 ms
+Count: 20
+Thread of execution: 6641, with duration: 2363 ms
+Thread of execution: 6639, with duration: 2369 ms
+Count: 21
+Thread of execution: 6638, with duration: 2359 ms
+Thread of execution: 6639, with duration: 2349 ms
+29-06-2016 08-45-58
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 6698, with duration: 2349 ms
+Count: 2
+Thread of execution: 6705, with duration: 2348 ms
+Count: 3
+Thread of execution: 6719, with duration: 2349 ms
+Count: 4
+Thread of execution: 6736, with duration: 2348 ms
+Count: 5
+Thread of execution: 6747, with duration: 2349 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 6763, with duration: 2521 ms
+Thread of execution: 6766, with duration: 2530 ms
+Thread of execution: 6765, with duration: 2535 ms
+Thread of execution: 6764, with duration: 2536 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 6766, with duration: 2814 ms
+Thread of execution: 6765, with duration: 2911 ms
+Thread of execution: 6764, with duration: 4286 ms
+Thread of execution: 6763, with duration: 4374 ms
+Count: 14
+Count: 15
+Count: 16
+Count: 17
+Thread of execution: 6763, with duration: 2537 ms
+Thread of execution: 6766, with duration: 2541 ms
+Thread of execution: 6764, with duration: 2544 ms
+Thread of execution: 6765, with duration: 2545 ms
+Count: 18
+Count: 19
+Count: 20
+Count: 21
+Thread of execution: 6763, with duration: 2493 ms
+Thread of execution: 6766, with duration: 2512 ms
+Thread of execution: 6764, with duration: 2512 ms
+Thread of execution: 6765, with duration: 2515 ms
+29-06-2016 09-12-18
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 9103, with duration: 89 ms
+Count: 2
+Thread of execution: 9110, with duration: 88 ms
+Count: 3
+Thread of execution: 9117, with duration: 88 ms
+Count: 4
+Thread of execution: 9123, with duration: 88 ms
+Count: 5
+Thread of execution: 9132, with duration: 88 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 9142, with duration: 107 ms
+Thread of execution: 9143, with duration: 107 ms
+Thread of execution: 9141, with duration: 108 ms
+Thread of execution: 9144, with duration: 108 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 9142, with duration: 103 ms
+Count: 14
+Thread of execution: 9143, with duration: 105 ms
+Thread of execution: 9141, with duration: 105 ms
+Thread of execution: 9144, with duration: 105 ms
+Count: 15
+Count: 16
+Count: 17
+Thread of execution: 9142, with duration: 89 ms
+Count: 18
+Thread of execution: 9143, with duration: 97 ms
+Thread of execution: 9141, with duration: 99 ms
+Thread of execution: 9144, with duration: 99 ms
+Count: 19
+Count: 20
+Count: 21
+Thread of execution: 9142, with duration: 88 ms
+Thread of execution: 9143, with duration: 90 ms
+Thread of execution: 9144, with duration: 99 ms
+Thread of execution: 9141, with duration: 100 ms
+29-06-2016 09-14-54
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 11536, with duration: 89 ms
+Count: 2
+Thread of execution: 11542, with duration: 89 ms
+Count: 3
+Thread of execution: 11550, with duration: 88 ms
+Count: 4
+Thread of execution: 11559, with duration: 88 ms
+Count: 5
+Thread of execution: 11569, with duration: 89 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 11581, with duration: 105 ms
+Thread of execution: 11582, with duration: 106 ms
+Thread of execution: 11584, with duration: Thread of execution: 106 ms
+11583, with duration: 106 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 11581, with duration: 103 ms
+Thread of execution: 11582, with duration: 105 ms
+Count: 14
+Thread of execution: 11583, with duration: 105 ms
+Count: 15
+Count: 16
+Thread of execution: 11584, with duration: 118 ms
+Count: 17
+Thread of execution: 11581, with duration: 88 ms
+Count: 18
+Thread of execution: 11582, with duration: 89 ms
+Thread of execution: 11583, with duration: 89 ms
+Count: 19
+Count: 20
+Thread of execution: 11584, with duration: 89 ms
+Count: 21
+Thread of execution: 11581, with duration: 89 ms
+Thread of execution: 11582, with duration: 88 ms
+Thread of execution: 11583, with duration: 89 ms
+Thread of execution: 11584, with duration: 89 ms
+29-06-2016 09-20-53
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 11934, with duration: 89 ms
+Count: 2
+Thread of execution: 11939, with duration: 89 ms
+Count: 3
+Thread of execution: 11945, with duration: 88 ms
+Count: 4
+Thread of execution: 11951, with duration: 89 ms
+Count: 5
+Thread of execution: 11957, with duration: 88 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 11964, with duration: 106 ms
+Thread of execution: 11966, with duration: 106 ms
+Thread of execution: 11965, with duration: 106 ms
+Thread of execution: 11967, with duration: 106 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 11966, with duration: 105 ms
+Thread of execution: 11964, with duration: 106 ms
+Thread of execution: 11967, with duration: 106 ms
+Thread of execution: 11965, with duration: 106 ms
+Count: 14
+Count: 15
+Count: 16
+Count: 17
+Thread of execution: 11966, with duration: 97 ms
+Count: 18
+Thread of execution: 11964, with duration: 103 ms
+Thread of execution: 11965, with duration: 103 ms
+Thread of execution: 11967, with duration: 104 ms
+Count: 19
+Count: 20
+Count: 21
+Thread of execution: 11966, with duration: 89 ms
+Thread of execution: 11964, with duration: 99 ms
+Thread of execution: 11967, with duration: 99 ms
+Thread of execution: 11965, with duration: 100 ms
+29-06-2016 09-23-31
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 12134, with duration: 89 ms
+Count: 2
+Thread of execution: 12139, with duration: 88 ms
+Count: 3
+Thread of execution: 12143, with duration: 88 ms
+Count: 4
+Thread of execution: 12149, with duration: 88 ms
+Count: 5
+Thread of execution: 12156, with duration: 89 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 12167, with duration: 105 ms
+Thread of execution: 12165, with duration: 105 ms
+Thread of execution: 12166, with duration: 106 ms
+Thread of execution: 12168, with duration: 106 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 12167, with duration: 103 ms
+Count: 14
+Thread of execution: 12165, with duration: 105 ms
+Thread of execution: 12166, with duration: 105 ms
+Count: 15
+Count: 16
+Thread of execution: 12168, with duration: 119 ms
+Count: 17
+Thread of execution: 12167, with duration: 88 ms
+Count: 18
+Thread of execution: 12165, with duration: 95 ms
+Thread of execution: 12166, with duration: 95 ms
+Thread of execution: 12168, with duration: 88 ms
+Count: 19
+Count: 20
+Count: 21
+Thread of execution: 12167, with duration: 88 ms
+Thread of execution: 12165, with duration: 97 ms
+Thread of execution: 12166, with duration: 98 ms
+Thread of execution: 12168, with duration: 92 ms
+29-06-2016 09-25-02
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 12397, with duration: 2351 ms
+Count: 2
+Thread of execution: 12407, with duration: 2351 ms
+Count: 3
+Thread of execution: 12416, with duration: 2349 ms
+Count: 4
+Thread of execution: 12425, with duration: 2349 ms
+Count: 5
+Thread of execution: 12433, with duration: 2350 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 12450, with duration: 2585 ms
+Count: 10
+Thread of execution: 12447, with duration: 2619 ms
+Count: 11
+Thread of execution: 12448, with duration: 2706 ms
+Count: 12
+Thread of execution: 12449, with duration: 3115 ms
+Count: 13
+Thread of execution: 12450, with duration: 2363 ms
+Count: 14
+Thread of execution: 12449, with duration: 2364 ms
+Count: 15
+Thread of execution: 12448, with duration: 2949 ms
+Count: 16
+Thread of execution: 12447, with duration: 3831 ms
+Count: 17
+Thread of execution: 12450, with duration: 2362 ms
+Count: 18
+Thread of execution: 12449, with duration: 2363 ms
+Count: 19
+Thread of execution: 12448, with duration: 3080 ms
+Count: 20
+Thread of execution: 12450, with duration: 2384 ms
+Count: 21
+Thread of execution: 12447, with duration: 3511 ms
+Thread of execution: 12449, with duration: 2361 ms
+Thread of execution: 12448, with duration: 2353 ms
+Thread of execution: 12450, with duration: 2351 ms
+29-06-2016 09-27-44
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 12674, with duration: 2350 ms
+Count: 2
+Thread of execution: 12684, with duration: 2354 ms
+Count: 3
+Thread of execution: 12699, with duration: 2349 ms
+Count: 4
+Thread of execution: 12706, with duration: 2350 ms
+Count: 5
+Thread of execution: 12713, with duration: 2349 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 12730, with duration: 2554 ms
+Count: 10
+Thread of execution: 12727, with duration: 2861 ms
+Count: 11
+Thread of execution: 12728, with duration: 2928 ms
+Count: 12
+Thread of execution: 12729, with duration: 3189 ms
+Count: 13
+Thread of execution: 12730, with duration: 2373 ms
+Count: 14
+Thread of execution: 12729, with duration: 2361 ms
+Count: 15
+Thread of execution: 12728, with duration: 2727 ms
+Count: 16
+Thread of execution: 12727, with duration: 3267 ms
+Count: 17
+Thread of execution: 12730, with duration: 2361 ms
+Count: 18
+Thread of execution: 12729, with duration: 2362 ms
+Count: 19
+Thread of execution: 12728, with duration: 2698 ms
+Count: 20
+Thread of execution: 12727, with duration: 3061 ms
+Count: 21
+Thread of execution: 12730, with duration: 2359 ms
+Thread of execution: 12729, with duration: 2359 ms
+Thread of execution: 12728, with duration: 2423 ms
+Thread of execution: 12727, with duration: 2941 ms

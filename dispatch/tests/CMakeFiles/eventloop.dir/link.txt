@@ -1,0 +1,1 @@
+/usr/bin/c++    -Wall -Wextra -fPIC   CMakeFiles/eventloop.dir/eventloop.c++.o  -o eventloop -rdynamic ../libatlas-dispatch.so -pthread -Wl,-rpath,/home/lukas/Development/hannes/atlas-rt/dispatch 

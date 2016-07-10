@@ -1,0 +1,1 @@
+/usr/bin/clang++    -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC   CMakeFiles/delete.dir/delete.c++.o  -o delete -rdynamic ../../../common/libcommon.a -pthread 

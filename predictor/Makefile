@@ -67,17 +67,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -195,6 +184,11 @@ predictor/fast:
 	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f predictor/CMakeFiles/predictor.dir/build.make predictor/CMakeFiles/predictor.dir/build
 .PHONY : predictor/fast
 
+# Manual pre-install relink rule for target.
+predictor/preinstall:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 predictor/CMakeFiles/predictor.dir/preinstall
+.PHONY : predictor/preinstall
+
 # Convenience name for target.
 predictor/CMakeFiles/predictor_test.dir/rule:
 	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 predictor/CMakeFiles/predictor_test.dir/rule
@@ -298,7 +292,6 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... install"

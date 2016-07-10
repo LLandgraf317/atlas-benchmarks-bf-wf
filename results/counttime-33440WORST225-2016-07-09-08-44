@@ -1,0 +1,34 @@
+09-07-2016 08-44-42
+Deadline for one matrix multiplication: 33440 ms
+1	2
+Duration: 8377 ms
+2	3
+Duration: 8383 ms
+3	1
+Duration: 8391 ms
+4	4
+Duration: 8394 ms
+5	2
+Duration: 8333 ms
+6	3
+Duration: 8373 ms
+7	4
+Duration: 8376 ms
+8	1
+Duration: 8408 ms
+9	2
+Duration: 7952 ms
+10	3
+Duration: 8077 ms
+11	4
+Duration: 8183 ms
+12	1
+Duration: 8173 ms
+13	2
+Duration: 7947 ms
+14	3
+Duration: 7950 ms
+15	4
+Duration: 8033 ms
+16	1
+Duration: 8028 ms

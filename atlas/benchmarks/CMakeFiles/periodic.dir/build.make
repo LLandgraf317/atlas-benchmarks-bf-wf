@@ -60,15 +60,15 @@ include atlas/benchmarks/CMakeFiles/periodic.dir/flags.make
 atlas/benchmarks/CMakeFiles/periodic.dir/periodic_taskset.c++.o: atlas/benchmarks/CMakeFiles/periodic.dir/flags.make
 atlas/benchmarks/CMakeFiles/periodic.dir/periodic_taskset.c++.o: atlas/benchmarks/periodic_taskset.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object atlas/benchmarks/CMakeFiles/periodic.dir/periodic_taskset.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/periodic.dir/periodic_taskset.c++.o -c /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/periodic_taskset.c++
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/periodic.dir/periodic_taskset.c++.o -c /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/periodic_taskset.c++
 
 atlas/benchmarks/CMakeFiles/periodic.dir/periodic_taskset.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/periodic.dir/periodic_taskset.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/periodic_taskset.c++ > CMakeFiles/periodic.dir/periodic_taskset.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/periodic_taskset.c++ > CMakeFiles/periodic.dir/periodic_taskset.c++.i
 
 atlas/benchmarks/CMakeFiles/periodic.dir/periodic_taskset.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/periodic.dir/periodic_taskset.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/periodic_taskset.c++ -o CMakeFiles/periodic.dir/periodic_taskset.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/periodic_taskset.c++ -o CMakeFiles/periodic.dir/periodic_taskset.c++.s
 
 atlas/benchmarks/CMakeFiles/periodic.dir/periodic_taskset.c++.o.requires:
 
@@ -92,9 +92,7 @@ atlas/benchmarks/periodic: atlas/benchmarks/CMakeFiles/periodic.dir/periodic_tas
 atlas/benchmarks/periodic: atlas/benchmarks/CMakeFiles/periodic.dir/build.make
 atlas/benchmarks/periodic: atlas/benchmarks/libtaskgen.so
 atlas/benchmarks/periodic: common/libcommon.a
-atlas/benchmarks/periodic: /usr/lib/libboost_program_options.a
-atlas/benchmarks/periodic: /usr/lib/libboost_math_tr1.a
-atlas/benchmarks/periodic: /usr/lib/libgmp.so
+atlas/benchmarks/periodic: /usr/lib/libboost_program_options.so
 atlas/benchmarks/periodic: atlas/benchmarks/CMakeFiles/periodic.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable periodic"
 	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/periodic.dir/link.txt --verbose=$(VERBOSE)

@@ -60,15 +60,15 @@ include runtime/tests/CMakeFiles/eventloop.dir/flags.make
 runtime/tests/CMakeFiles/eventloop.dir/eventloop.c++.o: runtime/tests/CMakeFiles/eventloop.dir/flags.make
 runtime/tests/CMakeFiles/eventloop.dir/eventloop.c++.o: runtime/tests/eventloop.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object runtime/tests/CMakeFiles/eventloop.dir/eventloop.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/eventloop.dir/eventloop.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/tests/eventloop.c++
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/eventloop.dir/eventloop.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/tests/eventloop.c++
 
 runtime/tests/CMakeFiles/eventloop.dir/eventloop.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/eventloop.dir/eventloop.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/tests/eventloop.c++ > CMakeFiles/eventloop.dir/eventloop.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/tests/eventloop.c++ > CMakeFiles/eventloop.dir/eventloop.c++.i
 
 runtime/tests/CMakeFiles/eventloop.dir/eventloop.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/eventloop.dir/eventloop.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/tests/eventloop.c++ -o CMakeFiles/eventloop.dir/eventloop.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/tests/eventloop.c++ -o CMakeFiles/eventloop.dir/eventloop.c++.s
 
 runtime/tests/CMakeFiles/eventloop.dir/eventloop.c++.o.requires:
 

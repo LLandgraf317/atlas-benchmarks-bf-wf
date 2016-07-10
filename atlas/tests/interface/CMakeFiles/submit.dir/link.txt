@@ -1,0 +1,1 @@
+/usr/bin/clang++    -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC   CMakeFiles/submit.dir/submit.c++.o  -o submit -rdynamic ../../../common/libcommon.a -pthread 

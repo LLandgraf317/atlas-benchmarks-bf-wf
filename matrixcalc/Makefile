@@ -1,7 +1,7 @@
 CC=g++
 LD_LIBRARY_PATH=/usr/local/lib
 CFLAGS=-pthread -c -std=c++14 
-OFLAGS=-latlas-runtime -lgcd-compat
+OFLAGS=-latlas-runtime -lgcd-compat -lboost_program_options
 CLEANEXTS=o so
 
 all: matrix_calc

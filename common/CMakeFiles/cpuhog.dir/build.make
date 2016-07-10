@@ -60,15 +60,15 @@ include common/CMakeFiles/cpuhog.dir/flags.make
 common/CMakeFiles/cpuhog.dir/cpuhog.c++.o: common/CMakeFiles/cpuhog.dir/flags.make
 common/CMakeFiles/cpuhog.dir/cpuhog.c++.o: common/cpuhog.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object common/CMakeFiles/cpuhog.dir/cpuhog.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpuhog.dir/cpuhog.c++.o -c /home/lukas/Development/hannes/atlas-rt/common/cpuhog.c++
+	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpuhog.dir/cpuhog.c++.o -c /home/lukas/Development/hannes/atlas-rt/common/cpuhog.c++
 
 common/CMakeFiles/cpuhog.dir/cpuhog.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpuhog.dir/cpuhog.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/common/cpuhog.c++ > CMakeFiles/cpuhog.dir/cpuhog.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/common/cpuhog.c++ > CMakeFiles/cpuhog.dir/cpuhog.c++.i
 
 common/CMakeFiles/cpuhog.dir/cpuhog.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpuhog.dir/cpuhog.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/common/cpuhog.c++ -o CMakeFiles/cpuhog.dir/cpuhog.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/common && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/common/cpuhog.c++ -o CMakeFiles/cpuhog.dir/cpuhog.c++.s
 
 common/CMakeFiles/cpuhog.dir/cpuhog.c++.o.requires:
 

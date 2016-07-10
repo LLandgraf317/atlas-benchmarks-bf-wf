@@ -60,15 +60,15 @@ include atlas/benchmarks/CMakeFiles/benchmark_submit.dir/flags.make
 atlas/benchmarks/CMakeFiles/benchmark_submit.dir/submit.c++.o: atlas/benchmarks/CMakeFiles/benchmark_submit.dir/flags.make
 atlas/benchmarks/CMakeFiles/benchmark_submit.dir/submit.c++.o: atlas/benchmarks/submit.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object atlas/benchmarks/CMakeFiles/benchmark_submit.dir/submit.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/benchmark_submit.dir/submit.c++.o -c /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/submit.c++
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/benchmark_submit.dir/submit.c++.o -c /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/submit.c++
 
 atlas/benchmarks/CMakeFiles/benchmark_submit.dir/submit.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/benchmark_submit.dir/submit.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/submit.c++ > CMakeFiles/benchmark_submit.dir/submit.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/submit.c++ > CMakeFiles/benchmark_submit.dir/submit.c++.i
 
 atlas/benchmarks/CMakeFiles/benchmark_submit.dir/submit.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/benchmark_submit.dir/submit.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/submit.c++ -o CMakeFiles/benchmark_submit.dir/submit.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/submit.c++ -o CMakeFiles/benchmark_submit.dir/submit.c++.s
 
 atlas/benchmarks/CMakeFiles/benchmark_submit.dir/submit.c++.o.requires:
 
@@ -90,8 +90,7 @@ benchmark_submit_EXTERNAL_OBJECTS =
 
 atlas/benchmarks/benchmark_submit: atlas/benchmarks/CMakeFiles/benchmark_submit.dir/submit.c++.o
 atlas/benchmarks/benchmark_submit: atlas/benchmarks/CMakeFiles/benchmark_submit.dir/build.make
-atlas/benchmarks/benchmark_submit: /usr/lib/libboost_program_options.a
-atlas/benchmarks/benchmark_submit: /usr/lib/libboost_math_tr1.a
+atlas/benchmarks/benchmark_submit: /usr/lib/libboost_program_options.so
 atlas/benchmarks/benchmark_submit: common/libcommon.a
 atlas/benchmarks/benchmark_submit: atlas/benchmarks/CMakeFiles/benchmark_submit.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable benchmark_submit"

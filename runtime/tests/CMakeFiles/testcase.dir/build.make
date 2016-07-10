@@ -60,15 +60,15 @@ include runtime/tests/CMakeFiles/testcase.dir/flags.make
 runtime/tests/CMakeFiles/testcase.dir/test.c++.o: runtime/tests/CMakeFiles/testcase.dir/flags.make
 runtime/tests/CMakeFiles/testcase.dir/test.c++.o: runtime/tests/test.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object runtime/tests/CMakeFiles/testcase.dir/test.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testcase.dir/test.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/tests/test.c++
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/testcase.dir/test.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/tests/test.c++
 
 runtime/tests/CMakeFiles/testcase.dir/test.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/testcase.dir/test.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/tests/test.c++ > CMakeFiles/testcase.dir/test.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/tests/test.c++ > CMakeFiles/testcase.dir/test.c++.i
 
 runtime/tests/CMakeFiles/testcase.dir/test.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/testcase.dir/test.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/tests/test.c++ -o CMakeFiles/testcase.dir/test.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/tests/test.c++ -o CMakeFiles/testcase.dir/test.c++.s
 
 runtime/tests/CMakeFiles/testcase.dir/test.c++.o.requires:
 

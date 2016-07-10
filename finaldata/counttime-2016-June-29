@@ -1,0 +1,394 @@
+Count: 1
+Thread of execution: 4170, with duration: 2350
+Count: 2
+Thread of execution: 4182, with duration: 2349
+Count: 3
+Thread of execution: 4190, with duration: 2349
+Count: 4
+Thread of execution: 4200, with duration: 2349
+Count: 5
+Thread of execution: 4209, with duration: 2352
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 4230, with duration: 5656
+Thread of execution: 4233, with duration: 6671
+Thread of execution: 4231, with duration: 10009
+Count: 10
+Count: 11
+Count: 12
+Thread of execution: 4232, with duration: 11980
+Count: 13
+Thread of execution: 4230, with duration: 2453
+Thread of execution: 4233, with duration: 2457
+Thread of execution: 4231, with duration: 2457
+Count: 14
+Count: 15
+Count: 16
+Thread of execution: 4232, with duration: 2355
+Count: 17
+Thread of execution: 4230, with duration: 2428
+Count: 18
+Thread of execution: 4231, with duration: 2446
+Thread of execution: 4233, with duration: 2446
+Count: 19
+Count: 20
+Thread of execution: 4232, with duration: 2359
+Count: 21
+Thread of execution: 4230, with duration: 2355
+Thread of execution: 4233, with duration: 2428
+Thread of execution: 4231, with duration: 2433
+Thread of execution: 4232, with duration: 2352
+29-06-2016 08-48-27
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 6832, with duration: 2349 ms
+Count: 2
+Thread of execution: 6842, with duration: 2349 ms
+Count: 3
+Thread of execution: 6853, with duration: 2349 ms
+Count: 4
+Thread of execution: 6864, with duration: 2349 ms
+Count: 5
+Thread of execution: 6875, with duration: 2347 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 6889, with duration: 2524 ms
+Thread of execution: 6890, with duration: 2529 ms
+Thread of execution: 6892, with duration: 2530 ms
+Thread of execution: 6891, with duration: 2532 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 6892, with duration: 4640 ms
+Thread of execution: 6889, with duration: 4891 ms
+Thread of execution: 6891, with duration: 4896 ms
+Count: 14
+Count: 15
+Count: 16
+Thread of execution: 6890, with duration: 7186 ms
+Count: 17
+Thread of execution: 6889, with duration: 2444 ms
+Thread of execution: 6892, with duration: 2449 ms
+Thread of execution: 6891, with duration: 2450 ms
+Count: 18
+Count: 19
+Count: 20
+Thread of execution: 6890, with duration: 2355 ms
+Count: 21
+Thread of execution: 6889, with duration: 2424 ms
+Thread of execution: 6892, with duration: 2447 ms
+Thread of execution: 6891, with duration: 2447 ms
+Thread of execution: 6890, with duration: 2351 ms
+29-06-2016 08-49-05
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 6971, with duration: 2350 ms
+Count: 2
+Thread of execution: 6975, with duration: 2348 ms
+Count: 3
+Thread of execution: 6984, with duration: 2348 ms
+Count: 4
+Thread of execution: 6994, with duration: 2349 ms
+Count: 5
+Thread of execution: 7005, with duration: 2349 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 7017, with duration: 2522 ms
+Thread of execution: 7018, with duration: 2533 ms
+Thread of execution: 7020, with duration: 2538 ms
+Thread of execution: 7019, with duration: 2539 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 7017, with duration: 2556 ms
+Thread of execution: 7019, with duration: 2562 ms
+Thread of execution: 7020, with duration: 2793 ms
+Thread of execution: 7018, with duration: 2827 ms
+Count: 14
+Count: 15
+Count: 16
+Count: 17
+Thread of execution: 7017, with duration: 2700 ms
+Count: 18
+Thread of execution: 7018, with duration: 2447 ms
+Thread of execution: 7020, with duration: 2448 ms
+Thread of execution: 7019, with duration: 2449 ms
+Count: 19
+Count: 20
+Count: 21
+Thread of execution: 7017, with duration: 2355 ms
+Thread of execution: 7018, with duration: 2437 ms
+Thread of execution: Thread of execution: 7019, with duration: 7020, with duration: 2445 ms
+2446 ms
+29-06-2016 08-49-42
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 7098, with duration: 2349 ms
+Count: 2
+Thread of execution: 7108, with duration: 2349 ms
+Count: 3
+Thread of execution: 7118, with duration: 2349 ms
+Count: 4
+Thread of execution: 7134, with duration: 2350 ms
+Count: 5
+Thread of execution: 7147, with duration: 2348 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 7157, with duration: 2529 ms
+Thread of execution: 7158, with duration: 2535 ms
+Thread of execution: 7160, with duration: 2538 ms
+Thread of execution: 7159, with duration: 2538 ms
+Count: 10
+Thread of execution: 7157, with duration: 2653 ms
+Count: 11
+Count: 12
+Count: 13
+Count: 14
+Thread of execution: 7158, with duration: 5693 ms
+Thread of execution: 7159, with duration: 5997 ms
+Thread of execution: 7160, with duration: 6154 ms
+Thread of execution: 7157, with duration: 2359 ms
+Count: 15
+Count: 16
+Count: 17
+Count: 18
+Thread of execution: 7159, with duration: 2541 ms
+Thread of execution: 7158, with duration: 2542 ms
+Thread of execution: 7160, with duration: 2546 ms
+Thread of execution: 7157, with duration: 2548 ms
+Count: 19
+Count: 20
+Count: 21
+Thread of execution: 7159, with duration: 2445 ms
+Thread of execution: 7158, with duration: 2452 ms
+Thread of execution: 7160, with duration: 2450 ms
+29-06-2016 08-50-21
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 7237, with duration: 2349 ms
+Count: 2
+Thread of execution: 7252, with duration: 2349 ms
+Count: 3
+Thread of execution: 7261, with duration: 2349 ms
+Count: 4
+Thread of execution: 7268, with duration: 2348 ms
+Count: 5
+Thread of execution: 7277, with duration: 2348 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 7290, with duration: 2534 ms
+Thread of execution: 7289, with duration: 2530 ms
+Thread of execution: 7292, with duration: 2535 ms
+Thread of execution: 7291, with duration: 2540 ms
+Count: 10
+Thread of execution: 7289, with duration: 3504 ms
+Count: 11
+Count: 12
+Count: 13
+Count: 14
+Thread of execution: 7290, with duration: 7125 ms
+Count: 15
+Thread of execution: 7291, with duration: 7344 ms
+Count: 16
+Thread of execution: 7289, with duration: 3332 ms
+Count: 17
+Thread of execution: 7292, with duration: 8062 ms
+Count: 18
+Thread of execution: 7290, with duration: 2355 ms
+Count: 19
+Thread of execution: 7291, with duration: 2356 ms
+Count: 20
+Thread of execution: 7289, with duration: 2357 ms
+Thread of execution: 7292, with duration: 2360 ms
+Count: 21
+Thread of execution: 7290, with duration: 2357 ms
+Thread of execution: 7291, with duration: 2358 ms
+Thread of execution: 7292, with duration: 2351 ms
+29-06-2016 08-51-01
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 7370, with duration: 2349 ms
+Count: 2
+Thread of execution: 7376, with duration: 2351 ms
+Count: 3
+Thread of execution: 7387, with duration: 2348 ms
+Count: 4
+Thread of execution: 7399, with duration: 2348 ms
+Count: 5
+Thread of execution: 7409, with duration: 2348 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 7427, with duration: 2520 ms
+Thread of execution: 7428, with duration: 2523 ms
+Thread of execution: 7430, with duration: 2529 ms
+Thread of execution: 7429, with duration: 2530 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 7428, with duration: 3095 ms
+Count: 14
+Thread of execution: 7427, with duration: 3977 ms
+Thread of execution: 7430, with duration: 4021 ms
+Count: 15
+Count: 16
+Thread of execution: 7429, with duration: 4359 ms
+Thread of execution: 7428, with duration: 3192 ms
+Thread of execution: 7430, with duration: 2444 ms
+Count: 17
+Count: 18
+Count: 19
+Thread of execution: 7427, with duration: 4145 ms
+Count: 20
+Thread of execution: 7430, with duration: 2459 ms
+Thread of execution: 7428, with duration: 2460 ms
+Thread of execution: 7429, with duration: 2461 ms
+Count: 21
+Thread of execution: 7427, with duration: 2352 ms
+Thread of execution: 7429, with duration: 2351 ms
+29-06-2016 08-52-36
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 7597, with duration: 2349 ms
+Count: 2
+Thread of execution: 7604, with duration: 2349 ms
+Count: 3
+Thread of execution: 7615, with duration: 2352 ms
+Count: 4
+Thread of execution: 7624, with duration: 2353 ms
+Count: 5
+Thread of execution: 7633, with duration: 2352 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 7646, with duration: 2540 ms
+Thread of execution: 7649, with duration: 2541 ms
+Thread of execution: 7648, with duration: 2542 ms
+Thread of execution: 7647, with duration: 2543 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 7647, with duration: 2811 ms
+Thread of execution: 7649, with duration: 3337 ms
+Count: 14
+Thread of execution: 7648, with duration: 3617 ms
+Count: 15
+Thread of execution: 7646, with duration: 5141 ms
+Count: 16
+Thread of execution: 7649, with duration: 2402 ms
+Count: 17
+Count: 18
+Thread of execution: 7647, with duration: 2811 ms
+Count: 19
+Thread of execution: 7646, with duration: 2382 ms
+Count: 20
+Thread of execution: 7649, with duration: 2356 ms
+Thread of execution: 7648, with duration: 3224 ms
+Count: 21
+Thread of execution: 7647, with duration: 2356 ms
+Thread of execution: 7646, with duration: 2354 ms
+Thread of execution: 7648, with duration: 2350 ms
+29-06-2016 08-53-37
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 7727, with duration: 2350 ms
+Count: 2
+Thread of execution: 7735, with duration: 2351 ms
+Count: 3
+Thread of execution: 7746, with duration: 2350 ms
+Count: 4
+Thread of execution: 7762, with duration: 2351 ms
+Count: 5
+Thread of execution: 7781, with duration: 2349 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 7790, with duration: 2525 ms
+Thread of execution: 7792, with duration: 2531 ms
+Thread of execution: 7793, with duration: 2534 ms
+Thread of execution: 7791, with duration: 2535 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 7791, with duration: 3354 ms
+Count: 14
+Thread of execution: 7792, with duration: 3426 ms
+Thread of execution: 7793, with duration: 3425 ms
+Count: 15
+Thread of execution: 7790, with duration: 3594 ms
+Count: 16
+Count: 17
+Thread of execution: 7793, with duration: 2455 ms
+Count: 18
+Thread of execution: 7791, with duration: 3606 ms
+Count: 19
+Thread of execution: 7790, with duration: 3474 ms
+Count: 20
+Thread of execution: 7792, with duration: 4343 ms
+Count: 21
+Thread of execution: 7793, with duration: 2358 ms
+Thread of execution: 7791, with duration: 2355 ms
+Thread of execution: 7790, with duration: 2355 ms
+Thread of execution: 7792, with duration: 2351 ms
+29-06-2016 08-56-34
+Deadline for one matrix multiplication: 5400 ms
+Count: 1
+Thread of execution: 8304, with duration: 2349 ms
+Count: 2
+Thread of execution: 8312, with duration: 2348 ms
+Count: 3
+Thread of execution: 8319, with duration: 2348 ms
+Count: 4
+Thread of execution: 8329, with duration: 2349 ms
+Count: 5
+Thread of execution: 8339, with duration: 2350 ms
+Count: 6
+Count: 7
+Count: 8
+Count: 9
+Thread of execution: 8355, with duration: 2522 ms
+Thread of execution: 8353, with duration: 2529 ms
+Thread of execution: 8354, with duration: 2534 ms
+Thread of execution: 8356, with duration: 2536 ms
+Count: 10
+Count: 11
+Count: 12
+Count: 13
+Thread of execution: 8353, with duration: 2792 ms
+Count: 14
+Thread of execution: 8355, with duration: 3249 ms
+Thread of execution: 8354, with duration: 3347 ms
+Thread of execution: 8356, with duration: 3351 ms
+Count: 15
+Count: 16
+Count: 17
+Thread of execution: 8356, with duration: 2483 ms
+Thread of execution: 8354, with duration: 2484 ms
+Count: 18
+Count: 19
+Thread of execution: 8353, with duration: 4049 ms
+Count: 20
+Thread of execution: 8355, with duration: 4634 ms
+Count: 21
+Thread of execution: 8356, with duration: 2446 ms
+Thread of execution: 8354, with duration: 2447 ms
+Thread of execution: 8353, with duration: 2354 ms
+Thread of execution: 8355, with duration: 2351 ms

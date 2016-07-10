@@ -1,0 +1,1 @@
+/usr/bin/clang++    -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC   CMakeFiles/serialization.dir/serialization.c++.o  -o serialization -rdynamic ../libpredictor.so ../../Dependencies/Build/GTestExternal/libgtest.a -pthread -Wl,-rpath,/home/lukas/Development/hannes/atlas-rt/predictor 

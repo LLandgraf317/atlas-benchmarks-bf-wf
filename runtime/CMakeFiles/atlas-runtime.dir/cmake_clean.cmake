@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/atlas-runtime.dir/dispatch.c++.o"
   "libatlas-runtime.pdb"
   "libatlas-runtime.so"
+  "libatlas-runtime.pdb"
+  "CMakeFiles/CMakeRelink.dir/libatlas-runtime.so"
 )
 
 # Per-language clean rules from dependency scanning.

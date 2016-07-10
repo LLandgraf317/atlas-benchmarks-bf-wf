@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <atomic>
 #include <memory>
+#include <numeric>
 #include <vector>
 #include <iomanip>
 #include <chrono>
@@ -68,11 +69,11 @@ static auto do_work(const execution_time &e) {
 }
 
 struct result {
-  int32_t jobs{0};
-  int32_t missed{0};
+  int64_t jobs{0};
+  int64_t missed{0};
 
   result() = default;
-  result(int32_t jobs_, int32_t missed_) : jobs(jobs_), missed(missed_) {}
+  result(int64_t jobs_, int64_t missed_) : jobs(jobs_), missed(missed_) {}
 
   result operator+(const result &rhs) {
     return result{jobs + rhs.jobs, missed + rhs.missed};
@@ -90,21 +91,21 @@ struct result {
 };
 
 class concurrent_queue {
-  uint32_t tp;
+  uint64_t tp;
   size_t num_threads;
   std::vector<task_attr> tasks;
   std::unique_ptr<std::thread[]> threads;
 
   hyperperiod_t hyperperiod;
-  int32_t jobs_;
-  std::atomic<int32_t> jobs;
-  std::atomic<int32_t> deadline_misses{0};
-  std::atomic<uint32_t> init;
-  std::atomic<uint32_t> done;
+  int64_t jobs_;
+  std::atomic<int64_t> jobs;
+  std::atomic<int64_t> deadline_misses{0};
+  std::atomic<uint64_t> init;
+  std::atomic<uint64_t> done;
 
-  void work(const uint32_t tp_, std::atomic<int32_t> &jobs_,
-            std::atomic<int32_t> &deadline_misses_,
-            std::atomic<uint32_t> &init_, std::atomic<uint32_t> &done_,
+  void work(const uint64_t tp_, std::atomic<int64_t> &jobs_,
+            std::atomic<int64_t> &deadline_misses_,
+            std::atomic<uint64_t> &init_, std::atomic<uint64_t> &done_,
             size_t cpu) {
     set_affinity(static_cast<unsigned>(cpu));
     atlas::threadpool::join(tp_);
@@ -114,7 +115,7 @@ class concurrent_queue {
 
     for (; jobs_.fetch_sub(1) > 0;) {
       using namespace std::chrono;
-      uint32_t id;
+      uint64_t id;
       long err = atlas::next(id);
       if(err <0 ) {
         std::cout << errno << strerror(errno) << std::endl;
@@ -153,7 +154,7 @@ public:
         tasks(generate_taskset(n, usum, umax, p_min, p_max)),
         threads(std::make_unique<std::thread[]>(num_threads)),
         hyperperiod(::hyperperiod(tasks)),
-        jobs_(std::accumulate(std::begin(tasks), std::end(tasks), int32_t(0),
+        jobs_(std::accumulate(std::begin(tasks), std::end(tasks), int64_t(0),
                               [this](const auto &sum, const auto &rhs) {
                                 return sum + (hyperperiod / rhs.p);
                               })),
@@ -215,12 +216,12 @@ public:
       release.t = &task;
     }
 
-    for (int32_t job = 0; job < jobs_;) {
+    for (int64_t job = 0; job < jobs_;) {
       for (auto &&release : releases) {
         if (release.r <= steady_clock::now()) {
           auto dl = release.r + release.t->p;
 
-          atlas::threadpool::submit(tp, reinterpret_cast<uint32_t>(release.t),
+          atlas::threadpool::submit(tp, reinterpret_cast<uint64_t>(release.t),
                                     release.t->e, dl);
           release.r = dl;
           ++release.count;
@@ -300,10 +301,10 @@ int main(int argc, char *argv[]) {
 
   std::vector<size_t> tasks;
   size_t count;
-  int32_t usum;
-  int32_t umax;
-  int32_t pmin;
-  int32_t pmax;
+  int64_t usum;
+  int64_t umax;
+  int64_t pmin;
+  int64_t pmax;
 
   // clang-format off
   desc.add_options()
@@ -352,7 +353,7 @@ int main(int argc, char *argv[]) {
 
   for (size_t task = tasks.front(); task <= tasks.back(); ++task) {
     std::cerr << usum << " " << umax << std::endl;
-    if (static_cast<int32_t>(task) * umax < usum) {
+    if (static_cast<int64_t>(task) * umax < usum) {
       std::cout << "nan nan" << std::endl;
       continue;
     }

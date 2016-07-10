@@ -50,7 +50,7 @@ class cputime_clock {
 public:
   using rep = typename std::chrono::nanoseconds::rep;
   using period = typename std::chrono::nanoseconds::period;
-  using duration = typename std::chrono::nanoseconds;
+  using duration = std::chrono::nanoseconds;
   using time_point = std::chrono::time_point<cputime_clock>;
   static constexpr bool is_steady = false;
 
@@ -73,10 +73,10 @@ pid_t invalid_tid();
 
 void set_affinity(unsigned cpu = 0, pid_t tid = gettid());
 void set_affinity(unsigned cpu, std::thread::id);
-void set_affinity(unsigned cpu, const std::thread &);
+void set_affinity(unsigned cpu, std::thread &);
 void set_affinity(std::initializer_list<unsigned> cpus, pid_t tid = gettid());
 void set_affinity(std::initializer_list<unsigned> cpus, std::thread::id);
-void set_affinity(std::initializer_list<unsigned> cpus, const std::thread &);
+void set_affinity(std::initializer_list<unsigned> cpus, std::thread &);
 
 using signal_handler_t = void (*)(int, siginfo_t *, void *);
 void set_signal_handler(int signal, signal_handler_t handler);

@@ -60,15 +60,15 @@ include atlas/benchmarks/CMakeFiles/taskgen.dir/flags.make
 atlas/benchmarks/CMakeFiles/taskgen.dir/taskgen.c++.o: atlas/benchmarks/CMakeFiles/taskgen.dir/flags.make
 atlas/benchmarks/CMakeFiles/taskgen.dir/taskgen.c++.o: atlas/benchmarks/taskgen.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object atlas/benchmarks/CMakeFiles/taskgen.dir/taskgen.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/taskgen.dir/taskgen.c++.o -c /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.c++
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/taskgen.dir/taskgen.c++.o -c /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.c++
 
 atlas/benchmarks/CMakeFiles/taskgen.dir/taskgen.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/taskgen.dir/taskgen.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.c++ > CMakeFiles/taskgen.dir/taskgen.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.c++ > CMakeFiles/taskgen.dir/taskgen.c++.i
 
 atlas/benchmarks/CMakeFiles/taskgen.dir/taskgen.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/taskgen.dir/taskgen.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.c++ -o CMakeFiles/taskgen.dir/taskgen.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks/taskgen.c++ -o CMakeFiles/taskgen.dir/taskgen.c++.s
 
 atlas/benchmarks/CMakeFiles/taskgen.dir/taskgen.c++.o.requires:
 
@@ -90,7 +90,6 @@ taskgen_EXTERNAL_OBJECTS =
 
 atlas/benchmarks/libtaskgen.so: atlas/benchmarks/CMakeFiles/taskgen.dir/taskgen.c++.o
 atlas/benchmarks/libtaskgen.so: atlas/benchmarks/CMakeFiles/taskgen.dir/build.make
-atlas/benchmarks/libtaskgen.so: /usr/lib/libgmp.so
 atlas/benchmarks/libtaskgen.so: atlas/benchmarks/CMakeFiles/taskgen.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libtaskgen.so"
 	cd /home/lukas/Development/hannes/atlas-rt/atlas/benchmarks && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/taskgen.dir/link.txt --verbose=$(VERBOSE)

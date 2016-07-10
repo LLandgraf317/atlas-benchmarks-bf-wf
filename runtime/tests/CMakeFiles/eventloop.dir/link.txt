@@ -1,1 +1,1 @@
-/usr/bin/c++    -Wall -Wextra -fPIC   CMakeFiles/eventloop.dir/eventloop.c++.o  -o eventloop -rdynamic ../libatlas-runtime.so -pthread -Wl,-rpath,/home/lukas/Development/hannes/atlas-rt/runtime 
+/usr/bin/clang++    -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC   CMakeFiles/eventloop.dir/eventloop.c++.o  -o eventloop -rdynamic ../libatlas-runtime.so -pthread -Wl,-rpath,/home/lukas/Development/hannes/atlas-rt/runtime:/home/lukas/Development/hannes/atlas-rt/predictor -Wl,-rpath-link,/home/lukas/Development/hannes/atlas-rt/predictor 

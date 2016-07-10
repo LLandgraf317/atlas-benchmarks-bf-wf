@@ -78,17 +78,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -180,6 +169,11 @@ atlas-runtime/fast:
 	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f runtime/CMakeFiles/atlas-runtime.dir/build.make runtime/CMakeFiles/atlas-runtime.dir/build
 .PHONY : atlas-runtime/fast
 
+# Manual pre-install relink rule for target.
+atlas-runtime/preinstall:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 runtime/CMakeFiles/atlas-runtime.dir/preinstall
+.PHONY : atlas-runtime/preinstall
+
 # Convenience name for target.
 runtime/CMakeFiles/gcd-compat.dir/rule:
 	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 runtime/CMakeFiles/gcd-compat.dir/rule
@@ -194,6 +188,11 @@ gcd-compat: runtime/CMakeFiles/gcd-compat.dir/rule
 gcd-compat/fast:
 	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f runtime/CMakeFiles/gcd-compat.dir/build.make runtime/CMakeFiles/gcd-compat.dir/build
 .PHONY : gcd-compat/fast
+
+# Manual pre-install relink rule for target.
+gcd-compat/preinstall:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 runtime/CMakeFiles/gcd-compat.dir/preinstall
+.PHONY : gcd-compat/preinstall
 
 dispatch.o: dispatch.c++.o
 
@@ -257,7 +256,6 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... test"
 	@echo "... atlas-runtime"

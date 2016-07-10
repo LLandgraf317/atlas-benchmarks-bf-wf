@@ -6,5 +6,5 @@ C_FLAGS =  -Wall -Wextra -fPIC   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/lukas/Development/hannes/atlas-rt/. 
+C_INCLUDES = -I/home/lukas/Development/hannes/atlas-rt/. -I/home/lukas/Development/hannes/atlas-rt/atlas 
 

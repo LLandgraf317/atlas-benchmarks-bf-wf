@@ -1,3 +1,5 @@
 *.o
 
 matrixcalc/matrix_bench
+build/*
+

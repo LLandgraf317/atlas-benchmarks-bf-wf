@@ -67,38 +67,26 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : edit_cache/fast
+.PHONY : list_install_components/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install/local
-install/local/fast: install/local
+# Special rule for the target test
+test/fast: test
 
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
+.PHONY : test/fast
 
 # Special rule for the target install
 install: preinstall
@@ -112,26 +100,27 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target install/local
+install/local/fast: install/local
 
-.PHONY : test/fast
+.PHONY : install/local/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : list_install_components/fast
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,34 +155,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-atlas/benchmarks/CMakeFiles/concurrent.dir/rule:
-	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 atlas/benchmarks/CMakeFiles/concurrent.dir/rule
-.PHONY : atlas/benchmarks/CMakeFiles/concurrent.dir/rule
+atlas/benchmarks/CMakeFiles/benchmark_submit.dir/rule:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 atlas/benchmarks/CMakeFiles/benchmark_submit.dir/rule
+.PHONY : atlas/benchmarks/CMakeFiles/benchmark_submit.dir/rule
 
 # Convenience name for target.
-concurrent: atlas/benchmarks/CMakeFiles/concurrent.dir/rule
+benchmark_submit: atlas/benchmarks/CMakeFiles/benchmark_submit.dir/rule
 
-.PHONY : concurrent
+.PHONY : benchmark_submit
 
 # fast build rule for target.
-concurrent/fast:
-	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f atlas/benchmarks/CMakeFiles/concurrent.dir/build.make atlas/benchmarks/CMakeFiles/concurrent.dir/build
-.PHONY : concurrent/fast
-
-# Convenience name for target.
-atlas/benchmarks/CMakeFiles/periodic.dir/rule:
-	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 atlas/benchmarks/CMakeFiles/periodic.dir/rule
-.PHONY : atlas/benchmarks/CMakeFiles/periodic.dir/rule
-
-# Convenience name for target.
-periodic: atlas/benchmarks/CMakeFiles/periodic.dir/rule
-
-.PHONY : periodic
-
-# fast build rule for target.
-periodic/fast:
-	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f atlas/benchmarks/CMakeFiles/periodic.dir/build.make atlas/benchmarks/CMakeFiles/periodic.dir/build
-.PHONY : periodic/fast
+benchmark_submit/fast:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f atlas/benchmarks/CMakeFiles/benchmark_submit.dir/build.make atlas/benchmarks/CMakeFiles/benchmark_submit.dir/build
+.PHONY : benchmark_submit/fast
 
 # Convenience name for target.
 atlas/benchmarks/CMakeFiles/taskgen.dir/rule:
@@ -211,19 +185,34 @@ taskgen/fast:
 .PHONY : taskgen/fast
 
 # Convenience name for target.
-atlas/benchmarks/CMakeFiles/benchmark_submit.dir/rule:
-	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 atlas/benchmarks/CMakeFiles/benchmark_submit.dir/rule
-.PHONY : atlas/benchmarks/CMakeFiles/benchmark_submit.dir/rule
+atlas/benchmarks/CMakeFiles/periodic.dir/rule:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 atlas/benchmarks/CMakeFiles/periodic.dir/rule
+.PHONY : atlas/benchmarks/CMakeFiles/periodic.dir/rule
 
 # Convenience name for target.
-benchmark_submit: atlas/benchmarks/CMakeFiles/benchmark_submit.dir/rule
+periodic: atlas/benchmarks/CMakeFiles/periodic.dir/rule
 
-.PHONY : benchmark_submit
+.PHONY : periodic
 
 # fast build rule for target.
-benchmark_submit/fast:
-	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f atlas/benchmarks/CMakeFiles/benchmark_submit.dir/build.make atlas/benchmarks/CMakeFiles/benchmark_submit.dir/build
-.PHONY : benchmark_submit/fast
+periodic/fast:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f atlas/benchmarks/CMakeFiles/periodic.dir/build.make atlas/benchmarks/CMakeFiles/periodic.dir/build
+.PHONY : periodic/fast
+
+# Convenience name for target.
+atlas/benchmarks/CMakeFiles/concurrent.dir/rule:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 atlas/benchmarks/CMakeFiles/concurrent.dir/rule
+.PHONY : atlas/benchmarks/CMakeFiles/concurrent.dir/rule
+
+# Convenience name for target.
+concurrent: atlas/benchmarks/CMakeFiles/concurrent.dir/rule
+
+.PHONY : concurrent
+
+# fast build rule for target.
+concurrent/fast:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f atlas/benchmarks/CMakeFiles/concurrent.dir/build.make atlas/benchmarks/CMakeFiles/concurrent.dir/build
+.PHONY : concurrent/fast
 
 concurrent.o: concurrent.c++.o
 
@@ -340,16 +329,15 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... concurrent"
-	@echo "... periodic"
-	@echo "... edit_cache"
-	@echo "... taskgen"
-	@echo "... benchmark_submit"
-	@echo "... install/local"
-	@echo "... install/strip"
-	@echo "... install"
-	@echo "... test"
 	@echo "... list_install_components"
+	@echo "... test"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... benchmark_submit"
+	@echo "... taskgen"
+	@echo "... edit_cache"
+	@echo "... periodic"
+	@echo "... concurrent"
 	@echo "... concurrent.o"
 	@echo "... concurrent.i"
 	@echo "... concurrent.s"

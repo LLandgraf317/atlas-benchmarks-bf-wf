@@ -1,0 +1,65 @@
+03-07-2016 11-53-31
+Deadline for one matrix multiplication: 11750 ms
+Count: 1
+Processor: 1
+Thread of execution: 4403, with duration: 2359 ms
+Count: 2
+Processor: 1
+Thread of execution: 4415, with duration: 2356 ms
+Count: 3
+Processor: 1
+Thread of execution: 4427, with duration: 2361 ms
+Count: 4
+Processor: 1
+Thread of execution: 4438, with duration: 2362 ms
+Count: 5
+Processor: 1
+Thread of execution: 4448, with duration: 2360 ms
+Count: 9
+Processor: 3
+Thread of execution: 4465, with duration: 2547 ms
+Count: 10
+Processor: 1
+Thread of execution: 4463, with duration: 2549 ms
+Count: 11
+Processor: 2
+Thread of execution: 4464, with duration: 2550 ms
+Count: 11
+Processor: 4
+Thread of execution: 4466, with duration: 2547 ms
+Count: 12
+Processor: 3
+Thread of execution: 4465, with duration: 2485 ms
+Count: 13
+Processor: 2
+Thread of execution: 4464, with duration: 2488 ms
+Count: 14
+Processor: 1
+Thread of execution: 4463, with duration: 2493 ms
+Count: 15
+Processor: 3
+Thread of execution: 4465, with duration: 2459 ms
+Count: 16
+Processor: 1
+Thread of execution: 4463, with duration: 2478 ms
+Count: 16
+Processor: 2
+Thread of execution: 4464, with duration: 2482 ms
+Count: 18
+Processor: 3
+Thread of execution: 4465, with duration: 2388 ms
+Count: 19
+Processor: 1
+Thread of execution: 4463, with duration: 2456 ms
+Count: 20
+Processor: 2
+Thread of execution: 4464, with duration: 2456 ms
+Count: 21
+Processor: 3
+Thread of execution: 4465, with duration: 2364 ms
+Count: 21
+Processor: 1
+Thread of execution: 4463, with duration: 2403 ms
+Count: 21
+Processor: 2
+Thread of execution: 4464, with duration: 2403 ms

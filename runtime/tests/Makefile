@@ -56,28 +56,6 @@ CMAKE_BINARY_DIR = /home/lukas/Development/hannes/atlas-rt
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -87,6 +65,17 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target install
 install: preinstall
@@ -111,16 +100,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
 
-# Special rule for the target install/local
-install/local/fast: install/local
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : install/local/fast
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -196,6 +185,21 @@ testcase/fast:
 .PHONY : testcase/fast
 
 # Convenience name for target.
+runtime/tests/CMakeFiles/concurrent-queue-tests.dir/rule:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 runtime/tests/CMakeFiles/concurrent-queue-tests.dir/rule
+.PHONY : runtime/tests/CMakeFiles/concurrent-queue-tests.dir/rule
+
+# Convenience name for target.
+concurrent-queue-tests: runtime/tests/CMakeFiles/concurrent-queue-tests.dir/rule
+
+.PHONY : concurrent-queue-tests
+
+# fast build rule for target.
+concurrent-queue-tests/fast:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f runtime/tests/CMakeFiles/concurrent-queue-tests.dir/build.make runtime/tests/CMakeFiles/concurrent-queue-tests.dir/build
+.PHONY : concurrent-queue-tests/fast
+
+# Convenience name for target.
 runtime/tests/CMakeFiles/broken.dir/rule:
 	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f CMakeFiles/Makefile2 runtime/tests/CMakeFiles/broken.dir/rule
 .PHONY : runtime/tests/CMakeFiles/broken.dir/rule
@@ -236,6 +240,33 @@ broken.s: broken.c++.s
 broken.c++.s:
 	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f runtime/tests/CMakeFiles/broken.dir/build.make runtime/tests/CMakeFiles/broken.dir/broken.c++.s
 .PHONY : broken.c++.s
+
+concurrent-queue-tests.o: concurrent-queue-tests.c++.o
+
+.PHONY : concurrent-queue-tests.o
+
+# target to build an object file
+concurrent-queue-tests.c++.o:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f runtime/tests/CMakeFiles/concurrent-queue-tests.dir/build.make runtime/tests/CMakeFiles/concurrent-queue-tests.dir/concurrent-queue-tests.c++.o
+.PHONY : concurrent-queue-tests.c++.o
+
+concurrent-queue-tests.i: concurrent-queue-tests.c++.i
+
+.PHONY : concurrent-queue-tests.i
+
+# target to preprocess a source file
+concurrent-queue-tests.c++.i:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f runtime/tests/CMakeFiles/concurrent-queue-tests.dir/build.make runtime/tests/CMakeFiles/concurrent-queue-tests.dir/concurrent-queue-tests.c++.i
+.PHONY : concurrent-queue-tests.c++.i
+
+concurrent-queue-tests.s: concurrent-queue-tests.c++.s
+
+.PHONY : concurrent-queue-tests.s
+
+# target to generate assembly for a file
+concurrent-queue-tests.c++.s:
+	cd /home/lukas/Development/hannes/atlas-rt && $(MAKE) -f runtime/tests/CMakeFiles/concurrent-queue-tests.dir/build.make runtime/tests/CMakeFiles/concurrent-queue-tests.dir/concurrent-queue-tests.c++.s
+.PHONY : concurrent-queue-tests.c++.s
 
 eventloop.o: eventloop.c++.o
 
@@ -297,19 +328,22 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
-	@echo "... install/strip"
 	@echo "... list_install_components"
+	@echo "... install/local"
 	@echo "... install"
 	@echo "... eventloop"
 	@echo "... rebuild_cache"
 	@echo "... testcase"
-	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... concurrent-queue-tests"
 	@echo "... test"
 	@echo "... broken"
 	@echo "... broken.o"
 	@echo "... broken.i"
 	@echo "... broken.s"
+	@echo "... concurrent-queue-tests.o"
+	@echo "... concurrent-queue-tests.i"
+	@echo "... concurrent-queue-tests.s"
 	@echo "... eventloop.o"
 	@echo "... eventloop.i"
 	@echo "... eventloop.s"

@@ -60,15 +60,15 @@ include predictor/CMakeFiles/predictor_test.dir/flags.make
 predictor/CMakeFiles/predictor_test.dir/testsuite.c++.o: predictor/CMakeFiles/predictor_test.dir/flags.make
 predictor/CMakeFiles/predictor_test.dir/testsuite.c++.o: predictor/testsuite.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object predictor/CMakeFiles/predictor_test.dir/testsuite.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/predictor && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/predictor_test.dir/testsuite.c++.o -c /home/lukas/Development/hannes/atlas-rt/predictor/testsuite.c++
+	cd /home/lukas/Development/hannes/atlas-rt/predictor && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/predictor_test.dir/testsuite.c++.o -c /home/lukas/Development/hannes/atlas-rt/predictor/testsuite.c++
 
 predictor/CMakeFiles/predictor_test.dir/testsuite.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/predictor_test.dir/testsuite.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/predictor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/predictor/testsuite.c++ > CMakeFiles/predictor_test.dir/testsuite.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/predictor && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/predictor/testsuite.c++ > CMakeFiles/predictor_test.dir/testsuite.c++.i
 
 predictor/CMakeFiles/predictor_test.dir/testsuite.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/predictor_test.dir/testsuite.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/predictor && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/predictor/testsuite.c++ -o CMakeFiles/predictor_test.dir/testsuite.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/predictor && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/predictor/testsuite.c++ -o CMakeFiles/predictor_test.dir/testsuite.c++.s
 
 predictor/CMakeFiles/predictor_test.dir/testsuite.c++.o.requires:
 
@@ -90,8 +90,7 @@ predictor_test_EXTERNAL_OBJECTS =
 
 predictor/predictor_test: predictor/CMakeFiles/predictor_test.dir/testsuite.c++.o
 predictor/predictor_test: predictor/CMakeFiles/predictor_test.dir/build.make
-predictor/predictor_test: predictor/libpredictor.a
-predictor/predictor_test: predictor/libllsp.a
+predictor/predictor_test: predictor/libpredictor.so
 predictor/predictor_test: predictor/CMakeFiles/predictor_test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable predictor_test"
 	cd /home/lukas/Development/hannes/atlas-rt/predictor && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/predictor_test.dir/link.txt --verbose=$(VERBOSE)

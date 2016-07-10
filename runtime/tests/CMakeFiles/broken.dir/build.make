@@ -60,15 +60,15 @@ include runtime/tests/CMakeFiles/broken.dir/flags.make
 runtime/tests/CMakeFiles/broken.dir/broken.c++.o: runtime/tests/CMakeFiles/broken.dir/flags.make
 runtime/tests/CMakeFiles/broken.dir/broken.c++.o: runtime/tests/broken.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object runtime/tests/CMakeFiles/broken.dir/broken.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/broken.dir/broken.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/tests/broken.c++
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/broken.dir/broken.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/tests/broken.c++
 
 runtime/tests/CMakeFiles/broken.dir/broken.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/broken.dir/broken.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/tests/broken.c++ > CMakeFiles/broken.dir/broken.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/tests/broken.c++ > CMakeFiles/broken.dir/broken.c++.i
 
 runtime/tests/CMakeFiles/broken.dir/broken.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/broken.dir/broken.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/tests/broken.c++ -o CMakeFiles/broken.dir/broken.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/runtime/tests && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/tests/broken.c++ -o CMakeFiles/broken.dir/broken.c++.s
 
 runtime/tests/CMakeFiles/broken.dir/broken.c++.o.requires:
 

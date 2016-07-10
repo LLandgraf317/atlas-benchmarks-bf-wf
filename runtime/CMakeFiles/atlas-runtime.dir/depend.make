@@ -6,5 +6,6 @@ runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o: runtime/dispatch-internal.h
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o: runtime/dispatch.c++
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o: runtime/dispatch.h
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o: atlas/atlas.h
+runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o: atlas/syscalls.h
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o: predictor/predictor.h
 

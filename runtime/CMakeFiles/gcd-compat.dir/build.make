@@ -60,15 +60,15 @@ include runtime/CMakeFiles/gcd-compat.dir/flags.make
 runtime/CMakeFiles/gcd-compat.dir/gcd-compat.c++.o: runtime/CMakeFiles/gcd-compat.dir/flags.make
 runtime/CMakeFiles/gcd-compat.dir/gcd-compat.c++.o: runtime/gcd-compat.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object runtime/CMakeFiles/gcd-compat.dir/gcd-compat.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gcd-compat.dir/gcd-compat.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/gcd-compat.c++
+	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gcd-compat.dir/gcd-compat.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/gcd-compat.c++
 
 runtime/CMakeFiles/gcd-compat.dir/gcd-compat.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gcd-compat.dir/gcd-compat.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/gcd-compat.c++ > CMakeFiles/gcd-compat.dir/gcd-compat.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/gcd-compat.c++ > CMakeFiles/gcd-compat.dir/gcd-compat.c++.i
 
 runtime/CMakeFiles/gcd-compat.dir/gcd-compat.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gcd-compat.dir/gcd-compat.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/gcd-compat.c++ -o CMakeFiles/gcd-compat.dir/gcd-compat.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/gcd-compat.c++ -o CMakeFiles/gcd-compat.dir/gcd-compat.c++.s
 
 runtime/CMakeFiles/gcd-compat.dir/gcd-compat.c++.o.requires:
 
@@ -99,6 +99,25 @@ runtime/libgcd-compat.so: runtime/CMakeFiles/gcd-compat.dir/link.txt
 runtime/CMakeFiles/gcd-compat.dir/build: runtime/libgcd-compat.so
 
 .PHONY : runtime/CMakeFiles/gcd-compat.dir/build
+
+# Object files for target gcd-compat
+gcd__compat_OBJECTS = \
+"CMakeFiles/gcd-compat.dir/gcd-compat.c++.o"
+
+# External object files for target gcd-compat
+gcd__compat_EXTERNAL_OBJECTS =
+
+runtime/CMakeFiles/CMakeRelink.dir/libgcd-compat.so: runtime/CMakeFiles/gcd-compat.dir/gcd-compat.c++.o
+runtime/CMakeFiles/CMakeRelink.dir/libgcd-compat.so: runtime/CMakeFiles/gcd-compat.dir/build.make
+runtime/CMakeFiles/CMakeRelink.dir/libgcd-compat.so: runtime/libatlas-runtime.so
+runtime/CMakeFiles/CMakeRelink.dir/libgcd-compat.so: runtime/CMakeFiles/gcd-compat.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library CMakeFiles/CMakeRelink.dir/libgcd-compat.so"
+	cd /home/lukas/Development/hannes/atlas-rt/runtime && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gcd-compat.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+runtime/CMakeFiles/gcd-compat.dir/preinstall: runtime/CMakeFiles/CMakeRelink.dir/libgcd-compat.so
+
+.PHONY : runtime/CMakeFiles/gcd-compat.dir/preinstall
 
 runtime/CMakeFiles/gcd-compat.dir/requires: runtime/CMakeFiles/gcd-compat.dir/gcd-compat.c++.o.requires
 

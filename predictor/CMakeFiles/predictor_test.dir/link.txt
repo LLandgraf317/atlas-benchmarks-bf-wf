@@ -1,1 +1,1 @@
-/usr/bin/c++    -Wall -Wextra -fPIC   CMakeFiles/predictor_test.dir/testsuite.c++.o  -o predictor_test -rdynamic libpredictor.a libllsp.a 
+/usr/bin/clang++    -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC   CMakeFiles/predictor_test.dir/testsuite.c++.o  -o predictor_test -rdynamic libpredictor.so -Wl,-rpath,/home/lukas/Development/hannes/atlas-rt/predictor 

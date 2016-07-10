@@ -1,2 +1,1 @@
-/usr/bin/ar qc libpredictor.a  CMakeFiles/predictor.dir/predictor.c++.o
-/usr/bin/ranlib libpredictor.a
+/usr/bin/clang++  -fPIC  -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC  -shared -Wl,-soname,libpredictor.so -o libpredictor.so CMakeFiles/predictor.dir/predictor.c++.o libllsp.a -lboost_serialization 

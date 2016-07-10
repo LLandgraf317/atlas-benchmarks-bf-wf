@@ -6,17 +6,17 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/lukas/Development/hannes/atlas-rt/predictor/testsuite.c++" "/home/lukas/Development/hannes/atlas-rt/predictor/CMakeFiles/predictor_test.dir/testsuite.c++.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "."
+  "atlas"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/lukas/Development/hannes/atlas-rt/predictor/CMakeFiles/predictor.dir/DependInfo.cmake"
-  "/home/lukas/Development/hannes/atlas-rt/predictor/CMakeFiles/llsp.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

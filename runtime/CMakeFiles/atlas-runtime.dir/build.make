@@ -60,15 +60,15 @@ include runtime/CMakeFiles/atlas-runtime.dir/flags.make
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o: runtime/CMakeFiles/atlas-runtime.dir/flags.make
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o: runtime/dispatch.c++
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/atlas-runtime.dir/dispatch.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/dispatch.c++
+	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/clang++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/atlas-runtime.dir/dispatch.c++.o -c /home/lukas/Development/hannes/atlas-rt/runtime/dispatch.c++
 
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/atlas-runtime.dir/dispatch.c++.i"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/dispatch.c++ > CMakeFiles/atlas-runtime.dir/dispatch.c++.i
+	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lukas/Development/hannes/atlas-rt/runtime/dispatch.c++ > CMakeFiles/atlas-runtime.dir/dispatch.c++.i
 
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/atlas-runtime.dir/dispatch.c++.s"
-	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/dispatch.c++ -o CMakeFiles/atlas-runtime.dir/dispatch.c++.s
+	cd /home/lukas/Development/hannes/atlas-rt/runtime && /usr/bin/clang++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lukas/Development/hannes/atlas-rt/runtime/dispatch.c++ -o CMakeFiles/atlas-runtime.dir/dispatch.c++.s
 
 runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o.requires:
 
@@ -90,8 +90,7 @@ atlas__runtime_EXTERNAL_OBJECTS =
 
 runtime/libatlas-runtime.so: runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o
 runtime/libatlas-runtime.so: runtime/CMakeFiles/atlas-runtime.dir/build.make
-runtime/libatlas-runtime.so: predictor/libpredictor.a
-runtime/libatlas-runtime.so: predictor/libllsp.a
+runtime/libatlas-runtime.so: predictor/libpredictor.so
 runtime/libatlas-runtime.so: runtime/CMakeFiles/atlas-runtime.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX shared library libatlas-runtime.so"
 	cd /home/lukas/Development/hannes/atlas-rt/runtime && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/atlas-runtime.dir/link.txt --verbose=$(VERBOSE)
@@ -100,6 +99,25 @@ runtime/libatlas-runtime.so: runtime/CMakeFiles/atlas-runtime.dir/link.txt
 runtime/CMakeFiles/atlas-runtime.dir/build: runtime/libatlas-runtime.so
 
 .PHONY : runtime/CMakeFiles/atlas-runtime.dir/build
+
+# Object files for target atlas-runtime
+atlas__runtime_OBJECTS = \
+"CMakeFiles/atlas-runtime.dir/dispatch.c++.o"
+
+# External object files for target atlas-runtime
+atlas__runtime_EXTERNAL_OBJECTS =
+
+runtime/CMakeFiles/CMakeRelink.dir/libatlas-runtime.so: runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o
+runtime/CMakeFiles/CMakeRelink.dir/libatlas-runtime.so: runtime/CMakeFiles/atlas-runtime.dir/build.make
+runtime/CMakeFiles/CMakeRelink.dir/libatlas-runtime.so: predictor/libpredictor.so
+runtime/CMakeFiles/CMakeRelink.dir/libatlas-runtime.so: runtime/CMakeFiles/atlas-runtime.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lukas/Development/hannes/atlas-rt/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX shared library CMakeFiles/CMakeRelink.dir/libatlas-runtime.so"
+	cd /home/lukas/Development/hannes/atlas-rt/runtime && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/atlas-runtime.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+runtime/CMakeFiles/atlas-runtime.dir/preinstall: runtime/CMakeFiles/CMakeRelink.dir/libatlas-runtime.so
+
+.PHONY : runtime/CMakeFiles/atlas-runtime.dir/preinstall
 
 runtime/CMakeFiles/atlas-runtime.dir/requires: runtime/CMakeFiles/atlas-runtime.dir/dispatch.c++.o.requires
 

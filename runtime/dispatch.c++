@@ -99,67 +99,79 @@ static void ignore_deadlines() {
 }
 }
 
-executor::~executor() = default;
-
-struct dispatch_queue::impl {
-  uint32_t magic = 0x61746C73; // 'atls'
-  std::string label_;
-  std::unique_ptr<executor> worker;
-
-  impl(dispatch_queue *queue, std::string label);
-  impl(dispatch_queue *queue, std::string label, std::vector<int> cpu_set);
-  void dispatch(work_item item) const { worker->enqueue(std::move(item)); }
-};
-
 static work_item *next_work_item() {
   uint64_t id;
-  work_item *ptr;
-  next(id);
-//  std::cout << "ID to be interpreted: " << std::hex << id << std::endl;
-  static_assert(sizeof(id) >= sizeof(ptr),
+  static_assert(sizeof(id) >= sizeof(work_item *),
                 "id must have at least pointer size.");
-  return reinterpret_cast<work_item *>(static_cast<uintptr_t>(id>>32));
+  auto num = next(id);
+  if (num > 1) {
+    throw std::runtime_error("Returning more than 1 job is not implemented");
+  } else if (num == 1) {
+    return reinterpret_cast<work_item *>(static_cast<uintptr_t>(id));
+  } else {
+    return nullptr;
+  }
 }
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wweak-vtables"
-class queue_worker final : public executor {
-#pragma clang diagnostic pop
+class executor {
   mutable std::condition_variable empty;
   mutable std::mutex list_lock;
   mutable std::list<work_item> work_queue;
-  std::thread thread;
 
-  bool done = false;
+  virtual void submit(const uint64_t id,
+                      const std::chrono::nanoseconds exectime,
+                      const std::chrono::steady_clock::time_point deadline) const = 0;
+  mutable std::atomic_bool done{false};
 
-  void process_work(dispatch_queue *queue) {
-    ignore_deadlines();
-    current_queue = queue;
+protected:
+  void shutdown() const {
+    using namespace std::literals::chrono_literals;
+    enqueue({{},
+             0us,
+             nullptr,
+             0,
+             0,
+             std::packaged_task<void()>([=] {
+               done = true;
+               empty.notify_all();
+             }),
+             false});
+  }
 
+  void work_loop() const {
     while (!done) {
       std::list<work_item> tmp;
+
       {
         std::unique_lock<std::mutex> lock(list_lock);
-        empty.wait(lock, [this] { return !work_queue.empty(); });
+        empty.wait(lock, [this] { return (!work_queue.empty() || done); });
+
+        if (done) {
+          break;
+        }
+
+        /* do non-real-time work in order - pop from the front as long as there
+         * is work */
         if (!work_queue.front().is_realtime) {
           tmp.splice(tmp.cbegin(), work_queue, work_queue.cbegin());
-        }
-      }
+        } else {
+          /* do real-time work */
+          auto ptr = next_work_item();
 
-      if (tmp.empty()) {
-        auto ptr = next_work_item();
+          if (ptr != nullptr) {
+            auto it =
+                std::find_if(work_queue.cbegin(), work_queue.cend(),
+                             [ptr](const auto &work) { return &work == ptr; });
+            if (it == work_queue.cend()) {
+              throw std::runtime_error("Work item not found.");
+            }
 
-        {
-          std::unique_lock<std::mutex> lock(list_lock);
-//	  std::cout << "Work_queue items: " << work_queue.cbegin()->type << " " << work_queue.cend()->type << std::endl;
-          auto it =
-              std::find_if(work_queue.cbegin(), work_queue.cend(),
-                           [ptr](const auto &work) { /*std::cout << &work << " " << ptr << std::endl; */return &work == ptr; });
-          if (it == work_queue.cend()) {
-            throw std::runtime_error("Work item not found.");
+            tmp.splice(tmp.cbegin(), work_queue, it);
+          } else {
+            /* no non-rt work and the rt work got someone else. go back to
+             * sleep. */
+            continue;
           }
-
-          tmp.splice(tmp.cbegin(), work_queue, it);
         }
       }
 
@@ -191,22 +203,8 @@ class queue_worker final : public executor {
   }
 
 public:
-  queue_worker(dispatch_queue *queue)
-      : thread(&queue_worker::process_work, this, queue) {}
-  ~queue_worker() {
-    using namespace std::literals::chrono_literals;
-    enqueue({{},
-             0us,
-             nullptr,
-             0,
-             0,
-             std::packaged_task<void()>([=] { done = true; }),
-             false});
-    if (thread.joinable())
-      thread.join();
-  }
-
-  void enqueue(work_item work) const override {
+  virtual ~executor();
+  void enqueue(work_item work) const {
     std::list<work_item> tmp;
     tmp.push_back(std::move(work));
 
@@ -216,10 +214,7 @@ public:
       if (item.is_realtime) {
         const auto exectime = application_estimator.predict(
             item.type, id, item.metrics, item.metrics_count);
-        np::submit(thread, id, exectime, item.deadline);
-      } else {
-        // using namespace std::literals::chrono_literals;
-        // np::submit(thread, id, 0s, work.deadline);
+        submit(id, exectime, item.deadline);
       }
     }
 
@@ -228,7 +223,49 @@ public:
       work_queue.splice(work_queue.end(), std::move(tmp));
     }
 
-    empty.notify_one();
+    empty.notify_all();
+  }
+};
+
+executor::~executor() {
+}
+
+struct dispatch_queue::impl {
+  uint32_t magic = 0x61746C73; // 'atls'
+  std::string label_;
+  std::unique_ptr<executor> worker;
+
+  impl(dispatch_queue *queue, std::string label);
+  impl(dispatch_queue *queue, std::string label, std::vector<int> cpu_set);
+  void dispatch(work_item item) const { worker->enqueue(std::move(item)); }
+};
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wweak-vtables"
+class queue_worker final : public executor {
+#pragma clang diagnostic pop
+  mutable std::thread thread;
+
+  void process_work(dispatch_queue *queue) {
+    ignore_deadlines();
+    current_queue = queue;
+    executor::work_loop();
+  }
+
+  void
+  submit(const uint64_t id, const std::chrono::nanoseconds exectime,
+         const std::chrono::steady_clock::time_point deadline) const override {
+    np::submit(thread, id, exectime, deadline);
+  }
+
+public:
+  queue_worker(dispatch_queue *queue)
+      : thread(&queue_worker::process_work, this, queue) {}
+  ~queue_worker() {
+    shutdown();
+
+    if (thread.joinable())
+      thread.join();
   }
 };
 
@@ -262,14 +299,10 @@ public:
 class concurrent final : public executor {
 #pragma clang diagnostic pop
   pool tp;
-  mutable std::condition_variable empty;
-  mutable std::mutex list_lock;
-  mutable std::list<work_item> work_queue;
-  mutable uint64_t count = 0;
   std::unique_ptr<std::thread[]> workers;
   size_t thread_count;
 
-  std::atomic_bool done{false};
+  std::atomic<size_t> init{0};
 
   void process_work(dispatch_queue *queue, int cpu) {
     {
@@ -284,109 +317,40 @@ class concurrent final : public executor {
     ignore_deadlines();
     tp.join();
     current_queue = queue;
+    --init;
 
-    while (!done) {
-      std::list<work_item> tmp;
-      {
-        std::unique_lock<std::mutex> lock(list_lock);
-        empty.wait(lock, [=] { return ((count != 0) || done); });
-        if (done) {
-          break;
-        }
-        --count;
-        if (!work_queue.front().is_realtime) {
-          tmp.splice(tmp.cbegin(), work_queue, work_queue.cbegin());
-        }
-      }
+    executor::work_loop();
+  }
 
-      if (tmp.empty()) {
-        auto ptr = next_work_item();
-
-        {
-          std::unique_lock<std::mutex> lock(list_lock);
-          auto it =
-              std::find_if(work_queue.cbegin(), work_queue.cend(),
-                           [ptr](const auto &work) { return &work == ptr; });
-          if (it == work_queue.cend()) {
-            throw std::runtime_error("Work item not found.");
-          }
-
-          tmp.splice(tmp.cbegin(), work_queue, it);
-        }
-      }
-
-      work_item &work = tmp.front();
-
-      try {
-        auto start = cputime_clock::now();
-        work.work();
-        auto end = cputime_clock::now();
-
-        if (work.is_realtime) {
-          using namespace std::chrono;
-          const auto exectime = end - start;
-          const uint64_t id = reinterpret_cast<uint64_t>(&work);
-          application_estimator.train(work.type, id,
-                                      duration_cast<microseconds>(exectime));
-        }
-      } catch (...) {
-      }
-    };
+  void
+  submit(const uint64_t id, const std::chrono::nanoseconds exectime,
+         const std::chrono::steady_clock::time_point deadline) const override {
+    tp.submit(id, exectime, deadline);
   }
 
 public:
   concurrent(dispatch_queue *queue, std::vector<int> cpu_set)
       : workers(std::make_unique<std::thread[]>(cpu_set.size())),
-        thread_count(cpu_set.size()) {
+        thread_count(cpu_set.size()), init(thread_count) {
     for (size_t i = 0; i < cpu_set.size(); ++i) {
       workers[i] =
           std::thread(&concurrent::process_work, this, queue, cpu_set[i]);
     }
+
+    /* wait until all threads are up, to avoid loosing a submit, when the thread
+     * pool is still empty */
+    for (; init;) {
+      std::this_thread::yield();
+    }
   }
   ~concurrent() {
-    using namespace std::literals::chrono_literals;
-    enqueue({{},
-             0us,
-             nullptr,
-             0,
-             0,
-             std::packaged_task<void()>([=] {
-               done = true;
-               empty.notify_all();
-             }),
-             false});
+    shutdown();
 
     for (size_t i = 0; i < thread_count; ++i) {
       if (workers[i].joinable()) {
         workers[i].join();
       }
     }
-  }
-
-  void enqueue(work_item work) const override {
-    std::list<work_item> tmp;
-    tmp.push_back(std::move(work));
-
-    {
-      auto &item = tmp.front();
-      const uint64_t id = reinterpret_cast<uint64_t>(&item);
-      if (item.is_realtime) {
-        const auto exectime = application_estimator.predict(
-            item.type, id, item.metrics, item.metrics_count);
-        tp.submit(id, exectime, item.deadline);
-      } else {
-        // using namespace std::literals::chrono_literals;
-        // np::submit(thread, id, 0s, work.deadline);
-      }
-    }
-
-    {
-      std::lock_guard<std::mutex> lock(list_lock);
-      work_queue.splice(work_queue.end(), tmp);
-      ++count;
-    }
-
-    empty.notify_one();
   }
 };
 
@@ -421,7 +385,6 @@ dispatch_queue::~dispatch_queue() = default;
 
 std::future<void> dispatch_queue::dispatch(std::function<void()> f) const {
   using namespace std::literals::chrono_literals;
-  std::cout << "Dispatch queue on line 422 called" << std::endl;
   auto item = work_item{std::chrono::steady_clock::now(),
                         0us,
                         nullptr,
@@ -440,15 +403,11 @@ dispatch_queue::dispatch(const std::chrono::steady_clock::time_point deadline,
                          const uint64_t type,
                          std::function<void()> block) const {
   using namespace std::literals::chrono_literals;
- // std::cout << "Dispatch queue on line 441 called" << std::endl;
   auto item = work_item{deadline,       0us,  metrics,
                         metrics_count,  type, std::packaged_task<void()>(block),
                         options.atlas()};
-  //std::cout << "Work-item initialized" << std::endl;
   auto future = item.work.get_future();
-  //std::cout << "Dispatching..." << std::endl;
   d_->dispatch(std::move(item));
-  //std::cout << "Returning future..." << std::endl;
   return future;
 }
 }

@@ -1,0 +1,1 @@
+/usr/bin/clang++    -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC   CMakeFiles/next.dir/next.c++.o  -o next -rdynamic ../../../Dependencies/Build/GTestExternal/libgtest.a -pthread 

@@ -1,0 +1,1 @@
+/usr/bin/clang++  -fPIC  -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC  -shared -Wl,-soname,libgcd-compat.so -o CMakeFiles/CMakeRelink.dir/libgcd-compat.so CMakeFiles/gcd-compat.dir/gcd-compat.c++.o libatlas-runtime.so -pthread -Wl,-rpath-link,/home/lukas/Development/hannes/atlas-rt/predictor 

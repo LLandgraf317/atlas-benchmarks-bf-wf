@@ -1,0 +1,34 @@
+03-07-2016 12-16-34
+Deadline for one matrix multiplication: 11750 ms
+4	CPU 2
+Duration: 2532 ms
+5	CPU 3
+Duration: 2535 ms
+6	CPU 4
+Duration: 2535 ms
+6	CPU 1
+Duration: 2542 ms
+7	CPU 2
+Duration: 2453 ms
+8	CPU 3
+Duration: 2476 ms
+9	CPU 1
+Duration: 2476 ms
+10	CPU 2
+Duration: 2407 ms
+11	CPU 3
+Duration: 2466 ms
+11	CPU 1
+Duration: 2467 ms
+13	CPU 2
+Duration: 2390 ms
+14	CPU 3
+Duration: 2462 ms
+15	CPU 1
+Duration: 2462 ms
+16	CPU 2
+Duration: 2365 ms
+16	CPU 3
+Duration: 2439 ms
+16	CPU 1
+Duration: 2442 ms

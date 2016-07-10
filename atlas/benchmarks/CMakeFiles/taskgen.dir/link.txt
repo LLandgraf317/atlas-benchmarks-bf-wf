@@ -1,1 +1,1 @@
-/usr/bin/c++  -fPIC  -Wall -Wextra -fPIC  -shared -Wl,-soname,libtaskgen.so -o libtaskgen.so CMakeFiles/taskgen.dir/taskgen.c++.o -lgmp 
+/usr/bin/clang++  -fPIC  -Weverything -Wno-c++98-compat -Wno-c++98-compat-pedantic -Wno-padded -fPIC  -shared -Wl,-soname,libtaskgen.so -o libtaskgen.so CMakeFiles/taskgen.dir/taskgen.c++.o 
