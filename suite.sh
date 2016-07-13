@@ -6,11 +6,11 @@ else
 	policy="default"
 fi
 
-deadline=8360
+deadline=2350
 count=0
-tmpdeadline=7
+tmpdeadline=10
 
-while [ $tmpdeadline -le 9 ];
+while [ $tmpdeadline -le 16 ];
 do
 	count=0
 	while [ $count -lt 10 ]; 

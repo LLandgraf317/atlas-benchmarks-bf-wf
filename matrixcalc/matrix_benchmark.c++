@@ -36,7 +36,7 @@ static std::mutex tid_addition_mutex;
 typedef boost::multi_array<double, 2> array_type;
 typedef array_type::index index_arr;
 
-int matrix_hl = 225;
+int matrix_hl = 150;
 
 auto deadline = 11750ms;
 
@@ -165,7 +165,7 @@ void matrix_parallel_once() {
 	matrixstruct task;
 	atlas::dispatch_queue queue("one", {1,2,3,4});
 	for(int i = 0; i<1; i++) {
-		sleep(4);
+		sleep(2);
 		queue.dispatch_async_atlas(steady_clock::now()+deadline, &metric, 1, std::bind(&matrixstruct::thread_start, &task));
 	}
 	

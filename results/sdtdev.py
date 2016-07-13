@@ -26,9 +26,20 @@ def averageOfList(li):
         res += float(i)
     return res/(len(li))
 
-def compareBySchedule(deadline):
-    res = ""
-    for i in range(4,10):
+def compareBySchedule(deadline,suffix,withStdDev):
+    resEW = ""
+    resEB = ""
+    resEWP = ""
+    resEWE = "" #dont ask, just dont
+    resEWEP = ""
+
+    resW = ""
+    resB = ""
+    resWP = ""
+    resWE = ""
+    resWEP = ""
+
+    for i in range(4,17):
        bestA15List = []
        worstA15List = []
 
@@ -38,24 +49,77 @@ def compareBySchedule(deadline):
        bestAllList = []
        worstAllList = []
        for file in os.listdir('.'):
-           if fnmatch.fnmatch(file,'measure-ATLAS-'+str(deadline*i)+'BESTDIS*') and os.stat(file).st_size > 0:
+           if fnmatch.fnmatch(file,'measure-ATLAS-'+str(deadline*i)+'BEST'+suffix+'*') and os.stat(file).st_size > 0:
                openAndPrint(file,bestA15List,[],[],bestTimeList,bestAllList)
-           if fnmatch.fnmatch(file,'measure-ATLAS-'+str(deadline*i)+'WORSTDIS*') and os.stat(file).st_size > 0:
+           if fnmatch.fnmatch(file,'measure-ATLAS-'+str(deadline*i)+'WORST'+suffix+'*') and os.stat(file).st_size > 0:
                openAndPrint(file,worstA15List,[],[],worstTimeList,worstAllList)
+
        timeBest = mean(bestTimeList)
        timeWorst = mean(worstTimeList)
        bestA15 = mean(bestA15List)
        worstA15 = mean(worstA15List)
-       bestAll = mean(bestAllList)
-       worstAll = mean(worstAllList)
+       bestAll = mean(bestAllList)*3600
+       worstAll = mean(worstAllList)*3600
+
        averageIdleDraw = 0.4710721
-       
+       averageAll = 3.11394186
        paddingTime = timeBest - timeWorst
        padWorstA15 = worstA15 + paddingTime * averageIdleDraw
        padWorstAll = worstAll + paddingTime * averageAll
        
-       string = '(' + str(i*deadline) + ','+ str(padWorstA15) + ') '
-       res = res * string
+       effectiveDeadline = i*deadline/1000
+       ddln = str(effectiveDeadline)
+
+       energyBest = '(' + ddln + ',' + str("%.3f"%(bestA15)) + ') '
+       energyWorst = '(' + ddln + ',' + str("%.3f"%(worstA15)) + ') '
+       energyPadWorst = '(' + ddln + ','+ str("%.3f"%(padWorstA15)) + ') '
+       energyWorstAll = '(' + ddln + ','+ str("%.3f"%(worstAll)) + ') '
+       energyPadWorstAll = '(' + ddln + ','+ str("%.3f"%(padWorstAll)) + ') '
+       
+       best = ddln + '\t' + str("%.3f"%(bestA15/(i*deadline/1000))) + '\n'
+       worst = ddln + '\t' + str("%.3f"%(worstA15/(i*deadline/1000))) + '\n'
+       string = ddln + '\t'+ str("%.3f"%(padWorstA15/(i*deadline/1000))) + '\n'
+       strWorstAll = ddln + '\t'+ str("%.3f"%(worstAll/(i*deadline/1000))) + '\n'
+       strPadWorstAll = ddln + '\t'+ str("%.3f"%(padWorstAll/(i*deadline/1000))) + '\n'
+
+       resEB = resEB + energyBest
+       resEW = resEW + energyWorst
+       resEWP = resEWP + energyPadWorst
+       resEWE = resEWE + energyWorstAll
+       resEWEP = resEWEP + energyPadWorstAll
+
+       resB = resB + best
+       resW = resW + worst
+       resWP = resWP + string
+       resWE = resWE + strWorstAll
+       resWEP = resWEP + strPadWorstAll
+    prefix = "Energie fuer "
+    strBf = "Best-Fit: "
+    strWf = "Worst-Fit: "
+    strWfP = "Worst-Fit mit Idle-Padding: "
+    strWfE = "Worst-Fit fuer das ganze System: "
+    strWfEP = "Worst-Fit fuer das ganze System mit Idle-Padding: "
+    print(prefix + strBf)
+    print(resEB)
+    print(prefix + strWf)
+    print(resEW)
+    print(prefix + strWfP)
+    print(resEWP)
+    print(prefix + strWfE)
+    print(resEWE)
+    print(prefix + strWfEP)
+    print(resEWEP)
+
+    print("Power fuer Best-Fit: ")
+    print(resB)
+    print("Power fuer Worst-Fit: ")
+    print(resW)
+    print("Power fuer Worst-Fit mit Idle-Padding: ")
+    print(resWP)
+    print("Power fuer Worst-Fit fuer das ganze System: ")
+    print(resWE)
+    print("Power fuer Worst-Fit fuer das ganze System mit Idle-Padding: ")
+    print(resWEP)
         
 
 def printByPattern(pattern):
@@ -99,4 +163,6 @@ for i in range(4,10):
 	printByPattern('measure-ATLAS-'+str(deadline*i)+'WORST225*')
 
 
-compareBySchedule(2350)
+compareBySchedule(2350,'DIS',False)
+#compareBySchedule(8360,'225',False)
+

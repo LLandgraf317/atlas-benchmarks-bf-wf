@@ -1,0 +1,68 @@
+11-07-2016 12-51-08
+Deadline for one matrix multiplication: 30550 ms
+1	2
+Duration: 2516 ms
+2	4
+Duration: 2520 ms
+3	3
+Duration: 2537 ms
+4	1
+Duration: 2547 ms
+5	2
+Duration: 2519 ms
+6	4
+Duration: 2529 ms
+7	3
+Duration: 2525 ms
+8	1
+Duration: 2530 ms
+9	2
+Duration: 2401 ms
+10	4
+Duration: 2472 ms
+11	3
+Duration: 2465 ms
+12	1
+Duration: 2463 ms
+13	2
+Duration: 2362 ms
+14	4
+Duration: 2420 ms
+15	3
+Duration: 2460 ms
+16	1
+Duration: 2460 ms
+11-07-2016 12-51-43
+Deadline for one matrix multiplication: 30550 ms
+1	1
+Duration: 2502 ms
+2	3
+Duration: 2522 ms
+3	2
+Duration: 2534 ms
+4	4
+Duration: 2535 ms
+5	1
+Duration: 2369 ms
+6	3
+Duration: 2392 ms
+7	4
+Duration: 2453 ms
+8	2
+Duration: 2454 ms
+9	1
+Duration: 2371 ms
+10	3
+Duration: 2358 ms
+11	4
+Duration: 2436 ms
+12	2
+Duration: 2434 ms
+13	1
+Duration: 2369 ms
+14	3
+Duration: 2358 ms
+15	2
+Duration: 2435 ms
+16	4
+Duration: 2437 ms
