@@ -15,7 +15,7 @@ if [ ! -d "results" ]; then
 fi
 
 export ATLAS_BACKEND="NONE"
-count=8
+count=2
 
 FILE="results/parsec/measure-"$ATLAS_BACKEND"-parsec-"$count$policy$(date "+-%Y-%B-%d-%H-%M-%S")
 echo $FILE
@@ -34,12 +34,6 @@ preA15J=`cat /sys/bus/i2c/drivers/INA231/0-0040/sensor_J`
 preA7_J=`cat /sys/bus/i2c/drivers/INA231/0-0045/sensor_J`
 preMEM_J=`cat /sys/bus/i2c/drivers/INA231/0-0041/sensor_J`
 cd ../parsec
-$cmd &
-$cmd &
-$cmd &
-$cmd &
-$cmd &
-$cmd &
 $cmd &
 $cmd &
 cd ../atlas-benchmarks

@@ -145,12 +145,16 @@ def printByPattern(pattern):
     print(str(mean(overlist)*3600.0) + 'J Gesamtverbrauch') 
     print()
 
+printByPattern('measure-NONE-parsec-2default-*')
+printByPattern('measure-ATLAS-parsec-2BESTMP250-*')
+printByPattern('measure-ATLAS-parsec-2WORSTMP250-*')
 printByPattern('measure-NONE-parsec-4default-*')
-printByPattern('measure-ATLAS-parsec-4BEST-*')
-printByPattern('measure-ATLAS-parsec-4WORST-*')
-printByPattern('measure-ATLAS-parsec-4BEST750*')
-printByPattern('measure-ATLAS-parsec-4WORST750*')#
-printByPattern('measure-ATLAS-parsec-8BEST750-*')
-printByPattern('measure-ATLAS-parsec-8WORST750-*')
+printByPattern('measure-ATLAS-parsec-4BESTMP250-*')
+printByPattern('measure-ATLAS-parsec-4WORSTMP250-*')
+printByPattern('measure-ATLAS-parsec-4BESTMP*')
+printByPattern('measure-ATLAS-parsec-4WORSTMP*')#
+printByPattern('measure-NONE-parsec-8default-*')
+printByPattern('measure-ATLAS-parsec-8BESTMP-*')
+printByPattern('measure-ATLAS-parsec-8WORSTMP-*')
 
 #compareBySchedule(2350,'DIS',False)
